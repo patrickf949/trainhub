@@ -8,7 +8,7 @@ import Home from '../index'
 
 export default function Post({ postData }) {
   return (
-    <div>
+    <Layout home>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -19,7 +19,7 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-    </div>
+    </Layout>
   )
 }
 
