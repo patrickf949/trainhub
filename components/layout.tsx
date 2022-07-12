@@ -4,17 +4,23 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = 'Train Hub'
-export const siteTitle = 'Next.js Sample Website'
+const name = 'Train Hub Org'
+export const siteTitle = 'Train Hub'
 
-export default function Layout({ children, home }) {
+export default function Layout({
+  children,
+  home
+}: {
+  children: React.ReactNode
+  home?: boolean
+}) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Train hub enables users manage and monitor institutions and their courses"
         />
         <meta
           property="og:image"
@@ -28,15 +34,12 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-            
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h4 className={utilStyles.heading2Xl}>{name}</h4>
           </>
         ) : (
           <>
             <Link href="/">
-              <a>
-                
-              </a>
+              Back home
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
