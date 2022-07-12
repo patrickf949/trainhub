@@ -14,7 +14,7 @@ export default function Post() {
             <article>
                 <Link href={`/contacts`}><h4>Contacts</h4></Link>
                 <Link href={`/contacts`}>
-                    <button>Add Contact</button></Link>
+                    <button className='btn btn-sm btn-outline-primary'>Add Contact</button></Link>
             </article>
         </Layout>
     )
