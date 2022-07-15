@@ -1,15 +1,26 @@
 
 import { Formik, Field, Form, useFormik } from 'formik';
 import Loader from '../../../components/loader';
-
+import * as Yup from 'yup';
 
 export default function Contact(props) {
     const { contact, handleSubmit, isProcessing } = props;
+    const validationSchema = Yup.object().shape({
+        phoneNumber: Yup.string()
+            .required("Phone Number is required")
+            .min(6, "Phone Number must be 10 characters")
+    });
+    // const formik = useFormik({
+    //     initialValues: contact,
+    //     validationSchema
+    // });
+
     return (
         <div>
             <Formik
                 initialValues={contact}
                 onSubmit={handleSubmit}
+                validationSchema={validationSchema}
             >
                 <Form className="form-control">
                     <label htmlFor="phoneNumber">

@@ -8,6 +8,7 @@ import { useQuery } from 'react-query'
 import { useRouter } from 'next/router'
 import { getContact } from '../../../modules/contacts/lib/contacts'
 import Loader from '../../../components/loader'
+import Link from 'next/link'
 
 export default function Post() {
     
@@ -16,11 +17,11 @@ export default function Post() {
     const { isLoading, data,  } = useQuery("singleContactData", () =>
         getContact(router.query.id)
             .then((res) => {
-                toast.success('Contacts Loaded');
+                toast.success('Contact Loaded');
                 return res.data;
             })
             .catch((error) => {
-                toast.error("Failed");
+                toast.error("Failed to load Contact");
                 toast.error(error.message);
             })
     );
@@ -33,6 +34,7 @@ export default function Post() {
         <title>Training Hub Contact</title>
       </Head>
       <article>
+        <p><Link href="/contacts">← Back to Contacts</Link></p>
         {data && <><h5>{data.data.phoneNumber}</h5>
         <Date dateString={data.data.createdAt}></Date>
         </>}
