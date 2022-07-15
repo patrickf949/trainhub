@@ -1,4 +1,6 @@
 import '../styles/global.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -22,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
         crossOrigin="anonymous" />
         <AuthProvider>
           <Component {...pageProps} />
+          <ToastContainer />
         </AuthProvider>
     </>
   )
