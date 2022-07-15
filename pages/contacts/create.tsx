@@ -1,8 +1,6 @@
 import Layout from '../../components/layout'
 import Link from 'next/link'
 import Head from 'next/head'
-import Date from '../../components/date'
-import utilStyles from '../../styles/utils.module.css'
 import Contact from '../../modules/contacts/components/add'
 import { contactObj } from '../../types/contacts'
 import { useEffect, useReducer, useState } from 'react'
