@@ -1,22 +1,24 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
+import { useAuth } from '../modules/auth/auth'
 
 export default function Home({
-  allPostsData
+  menuItems
 }: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
+  menuItems: {
+    name: string
+    route: string
   }[]
 }) {
+  const { user, login, } = useAuth();
+
   return (
-    <Layout home>
+
+      <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -25,31 +27,39 @@ export default function Home({
           This is a management portal for training institutions and their courses
         </p>
       </section>
+       <section className={utilStyles.headingMd}>
+       {!user &&<button onClick={login} className='btn btn-sm btn-outline-primary'>
+          Click to Access
+        </button>}
+      </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+      {user &&<><h2 className={utilStyles.headingLg}>Menu</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
+          {menuItems.map(({ name, route, }) => (
+            <li className={utilStyles.listItem} key={name}>
+              <Link href={route}>
+                <a>{name}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
             </li>
           ))}
-        </ul>
+        </ul></>}
       </section>
     </Layout>
+
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const menuItems: Array<Object> = [
+    {
+      name: 'Contacts',
+      route: '/contacts',
+    }
+  ]
   return {
     props: {
-      allPostsData
+      menuItems
     }
   }
 }
