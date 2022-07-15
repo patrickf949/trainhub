@@ -16,3 +16,5 @@ jobs:
           projectId: train-ub
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+          NEXT_PUBLIC_TOKEN: ${{ secrets.NEXT_PUBLIC_TOKEN }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
