@@ -4,8 +4,8 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = 'Train Hub Org'
-export const siteTitle = 'Train Hub'
+const name = 'Training Hub'
+export const siteTitle = 'Training Hub'
 
 export default function Layout({
   children,
@@ -39,7 +39,7 @@ export default function Layout({
         ) : (
           <>
             <Link href="/">
-              Back home
+              Back to Menu
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
@@ -53,7 +53,7 @@ export default function Layout({
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a>← Back to home</a>
+            <a>← Back to Menu</a>
           </Link>
         </div>
       )}
