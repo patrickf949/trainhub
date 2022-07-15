@@ -11,6 +11,6 @@ export function getContact(id) {
 }
 
 export function createContact(data) {
-  
-  return axiosApi.post(`${API_URL}/api/v1/contacts/`,data)
+
+  return axiosApi.post(`${API_URL}/api/v1/contacts/`,{phoneNumber:data.phoneNumber})
 }

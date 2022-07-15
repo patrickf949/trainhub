@@ -5,9 +5,9 @@ axiosApi.interceptors.request.use(
         const apiKey = localStorage.getItem("token");
         config.headers = {
             ...config.headers.common,
-            'Authorization': `Bearer ${apiKey}`,
+            'Authorization': apiKey,
             'Accept': 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json'
         }
         return config;
     },
