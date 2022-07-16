@@ -13,7 +13,6 @@ import Link from 'next/link'
 export default function Post() {
     
     const router = useRouter()
-    console.log(router.query.id);
     const { isLoading, data,  } = useQuery("singleContactData", () =>
         getContact(router.query.id)
             .then((res) => {
