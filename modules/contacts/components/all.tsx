@@ -12,7 +12,6 @@ export default function Contacts({
         id:string,
     }[]
 }) {
-    console.log(allContacts);
     return (
         <>
             <table className="table">
@@ -45,11 +44,3 @@ export default function Contacts({
         </>
     )
 }
-
-// : {
-//     allContacts: {
-//         phoneNumber: string
-//         createdAt: string
-//         id: string
-//     }[]
-// }

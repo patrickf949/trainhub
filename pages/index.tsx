@@ -53,9 +53,14 @@ export default function Home({
 export const getStaticProps: GetStaticProps = async () => {
   const menuItems: Array<Object> = [
     {
+      name: 'Training Schools',
+      route: '/trainingSchools'
+    },
+    {
       name: 'Contacts',
       route: '/contacts',
-    }
+    },
+    
   ]
   return {
     props: {

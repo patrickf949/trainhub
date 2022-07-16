@@ -9,7 +9,7 @@ import Contacts from '../../modules/contacts/components/all'
 import { toast } from 'react-toastify';
 
 
-export default function Post() {
+export default function Contact() {
     const { isLoading, data,  } = useQuery("contactData", () =>
         getAllContacts()
             .then((res) => {
