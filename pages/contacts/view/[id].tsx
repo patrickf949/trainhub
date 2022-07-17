@@ -13,8 +13,8 @@ import Link from 'next/link'
 export default function Post() {
     
     const router = useRouter()
-    const { isLoading, data,  } = useQuery("singleContactData", () =>
-        getContact(router.query.id)
+    const { isLoading, data,  } = useQuery("singleContactData", async () =>
+        await getContact(router.query.id)
             .then((res) => {
                 toast.success('Contact Loaded');
                 return res.data;
@@ -35,10 +35,10 @@ export default function Post() {
       <article>
         <p><Link href="/contacts">← Back to Contacts</Link></p>
         {data && <><h5>{data.data.phoneNumber}</h5>
-        <Date dateString={data.data.createdAt}></Date>
+          <Date dateString={data.data.createdAt}></Date>
         </>}
-      {isLoading && <Loader isLoading={isLoading}></Loader>}
-        
+        {isLoading && <Loader isLoading={isLoading}></Loader>}
+
       </article>
     </Layout>
   )

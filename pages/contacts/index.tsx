@@ -10,8 +10,8 @@ import { toast } from 'react-toastify';
 
 
 export default function Contact() {
-    const { isLoading, data,  } = useQuery("contactData", () =>
-        getAllContacts()
+    const { isLoading, data,  } = useQuery("contactData", async () =>
+        await getAllContacts()
             .then((res) => {
                 toast.success('Contacts Loaded');
                 return res.data;

@@ -1,7 +1,8 @@
 
 
 import { API_URL } from "../../../constants/index";
-import {axiosApi} from "../../auth/interceptor";
+import { axiosApi } from "../../auth/interceptor";
+
 export function getAllContacts() {
   return axiosApi.get(`${API_URL}/api/v1/contacts/`)
 }
