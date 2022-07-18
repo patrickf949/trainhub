@@ -50,3 +50,15 @@
 .lightText {
   color: #666;
 }
+.sticky {
+  position: sticky;top: 0;
+  background-color: white;
+}
+.stickyBottomm {
+  position: sticky;bottom: 0;
+  background-color: white;
+}
+.halfPage {
+  height: 40vh;
+  overflow-y: auto;
+}

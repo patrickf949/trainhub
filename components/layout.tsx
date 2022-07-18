@@ -4,17 +4,23 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = '[Your Name]'
-export const siteTitle = 'Next.js Sample Website'
+const name = 'Training Hub'
+export const siteTitle = 'Training Hub'
 
-export default function Layout({ children, home }) {
+export default function Layout({
+  children,
+  home
+}: {
+  children: React.ReactNode
+  home?: boolean
+}) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Train hub enables users manage and monitor institutions and their courses"
         />
         <meta
           property="og:image"
@@ -28,29 +34,12 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h4 className={utilStyles.heading2Xl}>{name}</h4>
           </>
         ) : (
           <>
             <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
+              Back to Menu
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
@@ -64,7 +53,7 @@ export default function Layout({ children, home }) {
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a>← Back to home</a>
+            <a>← Back to Menu</a>
           </Link>
         </div>
       )}
