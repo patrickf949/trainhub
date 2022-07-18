@@ -3,17 +3,16 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Date from '../../components/date'
 import { useQuery } from 'react-query'
-import { getAllContacts } from '../../modules/contacts/lib/contacts'
+import { getAllTrainingSchools } from '../../modules/trainingSchools/lib/schools'
 import Loader from '../../components/loader'
-import Contacts from '../../modules/contacts/components/all'
+import Schools from '../../modules/trainingSchools/components/all'
 import { toast } from 'react-toastify';
 
-
-export default function Contact() {
-    const { isLoading, data,  } = useQuery("contactData", async () =>
-        await getAllContacts()
+export default function TrainingSchools() {
+    const { isLoading, data,  } = useQuery("schoolsData", async () =>
+        await getAllTrainingSchools()
             .then((res) => {
-                toast.success('Contacts Loaded');
+                toast.success('Schools Loaded');
                 return res.data;
             })
             .catch((error) => {
@@ -25,16 +24,16 @@ export default function Contact() {
     return (
         <Layout>
             <Head>
-                <title>Contacts</title>
+                <title>Training Schools</title>
             </Head>
             <article>
-                <h4>Contacts</h4>
-                <Link href={`/contacts/create`}>
-                    <button className='btn btn-sm btn-outline-primary'>New Contact</button></Link>
+                <h4 >Schools</h4>
+                <Link href={`/trainingSchools/create`}>
+                    <button className='btn btn-sm btn-outline-primary'>Add School</button></Link>
 
             </article>
             <section>
-                {data && <Contacts allContacts={data.data}></Contacts>}
+                {data && <Schools allTrainingSchools={data.data}></Schools>}
                 {isLoading && <Loader isLoading={isLoading}></Loader>}
             </section>
         </Layout>

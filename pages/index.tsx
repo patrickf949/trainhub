@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
-import Date from '../components/date'
 import { GetStaticProps } from 'next'
 import { useAuth } from '../modules/auth/auth'
 
@@ -14,7 +13,7 @@ export default function Home({
     route: string
   }[]
 }) {
-  const { user, login, } = useAuth();
+  const { user, login } = useAuth();
 
   return (
 
@@ -53,9 +52,14 @@ export default function Home({
 export const getStaticProps: GetStaticProps = async () => {
   const menuItems: Array<Object> = [
     {
+      name: 'Training Schools',
+      route: '/trainingSchools'
+    },
+    {
       name: 'Contacts',
       route: '/contacts',
-    }
+    },
+    
   ]
   return {
     props: {

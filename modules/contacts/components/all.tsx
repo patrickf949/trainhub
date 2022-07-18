@@ -2,25 +2,25 @@
 import utilStyles from '../../../styles/utils.module.css'
 import Link from 'next/link'
 import Date from '../../../components/date'
+import { contactObj } from '../store/types'
 
 export default function Contacts({
     allContacts
 }:{
-    allContacts:{
-        phoneNumber:string,
-        createdAt:string,
-        id:string,
-    }[]
+    allContacts:contactObj[]
 }) {
-    console.log(allContacts);
     return (
         <>
             <table className="table">
-                <thead>
+                <thead className={utilStyles.sticky}>
+                    <tr>
+                        <td colSpan={4}><b>Contacts</b></td>
+                    </tr>
                     <tr>
                         <th>#</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">CreatedAt</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +33,7 @@ export default function Contacts({
                                     <Date dateString={createdAt} />
                                 </td>
                                 <td className={utilStyles.lightText}>
-                                    <Link href={`contacts/view/${id}`}><a className='btn btn-sm btn-outline-primary' >View</a></Link>
+                                    <Link href={`/contacts/view/${id}`}><a className='btn btn-sm btn-outline-primary' >View</a></Link>
                                 </td>
                         </tr>
                     ))}
@@ -45,11 +45,3 @@ export default function Contacts({
         </>
     )
 }
-
-// : {
-//     allContacts: {
-//         phoneNumber: string
-//         createdAt: string
-//         id: string
-//     }[]
-// }
