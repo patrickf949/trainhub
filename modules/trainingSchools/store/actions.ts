@@ -1,4 +1,4 @@
-import schoolData from "./types";
+import {schoolData} from "./types";
 
 export type ACTIONTYPE =
   | { type: "SchoolLoadingUpdate"; payload: boolean }

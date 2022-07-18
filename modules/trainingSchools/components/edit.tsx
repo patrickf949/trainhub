@@ -1,14 +1,17 @@
 
 import { Formik, Field, Form, useFormik } from 'formik';
 import Loader from '../../../components/loader';
+import { schoolDataEditProps, schoolDataProps } from '../store/types';
 
 
-export default function School(props) {
-    const { contact, handleSubmit, isProcessing } = props;
+export default function School({
+    props
+}: schoolDataEditProps) {
+    const { schoolData, handleSubmit, isProcessing } = props;
     return (
         <div>
             <Formik
-                initialValues={contact}
+                initialValues={schoolData}
                 onSubmit={handleSubmit}
             >
                 <Form className="form-control">

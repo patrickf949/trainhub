@@ -28,7 +28,7 @@ export default function TrainingSchools() {
             </Head>
             <article>
                 <h4 >Schools</h4>
-                <Link href={`/contacts/create`}>
+                <Link href={`/trainingSchools/create`}>
                     <button className='btn btn-sm btn-outline-primary'>Add School</button></Link>
 
             </article>

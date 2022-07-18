@@ -1,8 +1,6 @@
 import Layout from '../../../components/layout'
 import Head from 'next/head'
 import Date from '../../../components/date'
-import utilStyles from '../../styles/utils.module.css'
-import { GetStaticProps, GetStaticPaths } from 'next'
 import { toast } from 'react-toastify';
 import { useQuery } from 'react-query'
 import { useRouter } from 'next/router'
@@ -33,7 +31,7 @@ export default function Contact() {
         <title>Training Hub Contact</title>
       </Head>
       <article>
-      <p> <Link href="/">Menu</Link>&nbsp;>&nbsp;<Link href="/contacts">Contacts</Link></p>
+      <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/contacts">Contacts</Link></p>
         {data && <><h5>{data.data.phoneNumber}</h5>
           <Date dateString={data.data.createdAt}></Date>
         </>}

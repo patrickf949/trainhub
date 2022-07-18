@@ -41,7 +41,7 @@ export default function TrainingSchool() {
                 <title>{school.name}</title>
             </Head>
             <article>
-            <p> <Link href="/">Menu</Link>&nbsp;>&nbsp;<Link href="/trainingSchools">Schools</Link></p>
+            <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/trainingSchools">Schools</Link></p>
                 <School schoolData={school}></School>
                 <Loader isProcessing={isLoading}></Loader>
             </article>
