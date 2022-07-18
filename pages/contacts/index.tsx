@@ -9,9 +9,9 @@ import Contacts from '../../modules/contacts/components/all'
 import { toast } from 'react-toastify';
 
 
-export default function Contact() {
-    const { isLoading, data,  } = useQuery("contactData", async () =>
-        await getAllContacts()
+export default function Post() {
+    const { isLoading, data,  } = useQuery("contactData", () =>
+        getAllContacts()
             .then((res) => {
                 toast.success('Contacts Loaded');
                 return res.data;
@@ -30,7 +30,7 @@ export default function Contact() {
             <article>
                 <h4>Contacts</h4>
                 <Link href={`/contacts/create`}>
-                    <button className='btn btn-sm btn-outline-primary'>New Contact</button></Link>
+                    <button className='btn btn-outline-primary'>New Contact</button></Link>
 
             </article>
             <section>

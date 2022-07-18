@@ -25,16 +25,11 @@ export function AuthProvider({ children }: Props) {
         storeUserDetails(token);
         setUser(true);
     };
-    const logout = () => {
-        localStorage.clear();
-        setUser(false);
-    };
 
 
     const value = {
         user,
         login,
-        logout
     };
     return (
         <>
