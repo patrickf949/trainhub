@@ -44,25 +44,22 @@ export type schoolDataProps = {
   schoolData: schoolData;
 };
 
+export type schoolEditObj = {
+  name: string;
+  registrationStatus: string;
+  principal: string;
+  healthFacility: string;
+  address: string;
+  email: string;
+  district: string;
+  contacts: string[];
+  courses: string[];
+  level: number;
+  passRate: number;
+}
+
 export type schoolDataEditProps = {
-  // children:React.ReactNode,
-  props: {
-    schoolData: {
-      name: string;
-      registrationStatus: string;
-      principal: string;
-      healthFacility: string;
-      address: string;
-      email: string;
-      district: string;
-      contacts: string[];
-      courses: string[];
-      level: number;
-      passRate: number;
-      id: string;
-      createdAt: string;
-    };
-    handleSubmit: () => void;
+    school: schoolEditObj;
+    handleSubmit: (values:schoolEditObj) => Promise<void>;
     isProcessing: boolean;
-  };
 };

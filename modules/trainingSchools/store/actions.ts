@@ -1,4 +1,4 @@
-import {schoolData} from "./types";
+import {schoolData, schoolEditObj} from "./types";
 
 export type ACTIONTYPE =
   | { type: "SchoolLoadingUpdate"; payload: boolean }
@@ -8,3 +8,12 @@ export type ACTIONTYPE =
     }
   | { type: "SchoolUpdate"; payload: schoolData }
   | { type: "SchoolsLoad"; payload: schoolData[] };
+
+
+export type EDITACTIONTYPE =
+  | { type: "editSchoolLoadingUpdate"; payload: boolean }
+  | {
+      type: "editstateUpdate";
+      payload: { isLoading: boolean; school: schoolEditObj };
+    }
+  | { type: "editSchoolUpdate"; payload: schoolEditObj };

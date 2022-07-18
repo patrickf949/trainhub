@@ -20,7 +20,6 @@ export default function TrainingSchool() {
 
     const load = useQuery("singleSchoolData", async () => {
         dispatch({ type: "SchoolLoadingUpdate", payload: true });
-        console.log(router.query.id);
         await getTrainingSchool(router.query.id)
             .then((res) => {
                 toast.success('School Loaded');
