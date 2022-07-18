@@ -19,13 +19,21 @@ export default function School(props: schoolDataEditProps) {
         name: Yup.string().required("Name is required"),
         principal: Yup.string()
             .required("Principal is required")
-            .min(6, "Principal name must be at least 6 characters")
+            .min(4, "Principal name must be at least 4 characters")
             .max(60, "Principal namme must not exceed 60 characters"),
         registrationStatus: Yup.string().oneOf(statuses, 'Will default to full registration'),
         email: Yup.string().email("Email is invalid"),
         district: Yup.string().required("District is required"),
-        healthFacility: Yup.string(),
-        address: Yup.string(),
+        healthFacility: Yup.string()
+            .min(4,"Health facility must be atleast 4 characters"),
+        passRate: Yup.string()
+            .trim()
+            .matches(/^[0-9]+$/, 'Must be digits'),
+        level: Yup.string()
+            .trim()
+            .matches(/^[0-9]+$/, 'Must be digits'),
+        contacts: Yup.array(),
+        courses:Yup.array(),
     });
 
     return (

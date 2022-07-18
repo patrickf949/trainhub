@@ -54,8 +54,8 @@ export type schoolEditObj = {
   district: string;
   contacts: string[];
   courses: string[];
-  level: number;
-  passRate: number;
+  level: string;
+  passRate: string;
 }
 
 export type schoolDataEditProps = {

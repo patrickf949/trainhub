@@ -54,3 +54,10 @@
   position: sticky;top: 0;
   background-color: white;
 }
+.stickyBottomm {
+  position: sticky;bottom: 0;
+  background-color: white;
+}
+.stickyBottomm {
+  margin-top: 4em;
+}

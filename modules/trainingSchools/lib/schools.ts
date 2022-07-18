@@ -13,6 +13,10 @@ export function createTrainingSchool(data:schoolEditObj) {
   return axiosApi.post(`${API_URL}/api/v1/trainingSchools/`,data)
 }
 
-export function editTrainingSchool(data:schoolEditObj) {
-  return axiosApi.patch(`${API_URL}/api/v1/trainingSchools/`,data)
+export function editTrainingSchool(data:schoolEditObj,id:string) {
+  return axiosApi.patch(`${API_URL}/api/v1/trainingSchools/${id}}`,data)
+}
+
+export function deleteTrainingSchool(id:string) {
+  return axiosApi.delete(`${API_URL}/api/v1/trainingSchools/${id}`)
 }
