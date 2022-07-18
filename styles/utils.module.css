@@ -58,6 +58,7 @@
   position: sticky;bottom: 0;
   background-color: white;
 }
-.stickyBottomm {
-  margin-top: 4em;
+.halfPage {
+  height: 40vh;
+  overflow-y: auto;
 }

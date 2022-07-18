@@ -13,11 +13,11 @@ export default function School({
 
 
     return (
-        <div className={utilStyles.stickyBottom}>
+        <div className={utilStyles.sticky}>
             <h4>Are you sure you want to delete this school&nbsp;
-                <b>name</b>
+                <b>{name}</b>
             </h4>
-            <button onClick={useQuery(`deleteSchool`, async () => await handleDelete()} className='btn btn-sm btn-danger'>Delete</button>
+            <button onClick={async()=>await handleDelete()} className='btn btn-sm btn-danger'>Delete</button>
 
         </div>
     )

@@ -54,10 +54,13 @@ export default function TrainingSchool() {
             </Head>
             <article>
             <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/trainingSchools">Schools</Link></p>
+            <DeleteSchool schoolData={school} handleDelete={handleDelete} ></DeleteSchool>
+                <div className={utilStyles.halfPage}>
+
                 
                 <School  schoolData={school}></School>
                 <Loader isProcessing={isLoading}></Loader>
-                <DeleteSchool schoolData={school} handleDelete={handleDelete} ></DeleteSchool>
+                </div>
             </article>
         </Layout>
     )

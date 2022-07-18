@@ -38,8 +38,18 @@ export default function TrainingSchool() {
                 <title>{school.name}</title>
             </Head>
             <article>
-            <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/trainingSchools">Schools</Link></p>
-                <School schoolData={school}></School>
+                <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/trainingSchools">Schools</Link></p>
+                {school.id && <div className='row'>
+                    <div className="col">
+                        <Link href={`/trainingSchools/update/${school.id}`}>
+                            <a className='btn btn-sm btn-outline-primary'>Update</a></Link>
+                    </div>
+                    <div className="col">
+                        <Link href={`/trainingSchools/delete/${school.id}`}>
+                            <a className='btn btn-sm btn-outline-danger float-right'>Delete</a></Link>
+                    </div>
+                </div>}
+                {!isLoading && <School schoolData={school}></School>}
                 <Loader isProcessing={isLoading}></Loader>
             </article>
         </Layout>
