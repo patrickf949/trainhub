@@ -2,7 +2,7 @@ import Layout from '../../components/layout'
 import Link from 'next/link'
 import Head from 'next/head'
 import Contact from '../../modules/contacts/components/add'
-import { contactObj } from '../../types/contacts'
+import { contactObj } from '../../modules/contacts/store/types'
 import { useEffect, useReducer, useState } from 'react'
 import { useQuery } from 'react-query'
 import { createContact } from '../../modules/contacts/lib/contacts'
@@ -19,9 +19,9 @@ export default function CreateContact() {
     const [state, dispatch] = useReducer(reducer,initialState);
 
 
-    const handleSubmit = (values, { setSubmitting, setFieldError, setStatus, isProcessing }) => {
+    const handleSubmit = async (values, { setSubmitting, setFieldError, setStatus, isProcessing }) => {
         dispatch({ type: "ContactLoadingChange", payload: true });
-        createContact(values).then(() => {
+        await createContact(values).then(() => {
             toast.success("Successfully created");
             dispatch({ type: "ContactLoadingChange", payload: false });
             router.push('/contacts');

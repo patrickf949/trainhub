@@ -10,7 +10,7 @@ import { getContact } from '../../../modules/contacts/lib/contacts'
 import Loader from '../../../components/loader'
 import Link from 'next/link'
 
-export default function Post() {
+export default function Contact() {
     
     const router = useRouter()
     const { isLoading, data,  } = useQuery("singleContactData", async () =>
@@ -33,7 +33,7 @@ export default function Post() {
         <title>Training Hub Contact</title>
       </Head>
       <article>
-        <p><Link href="/contacts">← Back to Contacts</Link></p>
+      <p> <Link href="/">Menu</Link>&nbsp;>&nbsp;<Link href="/contacts">Contacts</Link></p>
         {data && <><h5>{data.data.phoneNumber}</h5>
           <Date dateString={data.data.createdAt}></Date>
         </>}

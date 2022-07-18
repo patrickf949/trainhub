@@ -3,7 +3,7 @@ import { Formik, Field, Form, useFormik } from 'formik';
 import Loader from '../../../components/loader';
 
 
-export default function Contact(props) {
+export default function School(props) {
     const { contact, handleSubmit, isProcessing } = props;
     return (
         <div>

@@ -30,7 +30,7 @@ export default function Contact() {
             <article>
                 <h4>Contacts</h4>
                 <Link href={`/contacts/create`}>
-                    <button className='btn btn-outline-primary'>New Contact</button></Link>
+                    <button className='btn btn-sm btn-outline-primary'>New Contact</button></Link>
 
             </article>
             <section>

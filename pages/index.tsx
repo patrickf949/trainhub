@@ -14,7 +14,7 @@ export default function Home({
     route: string
   }[]
 }) {
-  const { user, login, } = useAuth();
+  const { user, login } = useAuth();
 
   return (
 

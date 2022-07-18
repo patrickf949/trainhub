@@ -8,12 +8,11 @@ import Loader from '../../components/loader'
 import Schools from '../../modules/trainingSchools/components/all'
 import { toast } from 'react-toastify';
 
-
 export default function TrainingSchools() {
-    const { isLoading, data,  } = useQuery("contactData", () =>
-        getAllTrainingSchools()
+    const { isLoading, data,  } = useQuery("schoolsData", async () =>
+        await getAllTrainingSchools()
             .then((res) => {
-                toast.success('Contacts Loaded');
+                toast.success('Schools Loaded');
                 return res.data;
             })
             .catch((error) => {
@@ -28,7 +27,7 @@ export default function TrainingSchools() {
                 <title>Training Schools</title>
             </Head>
             <article>
-                <h4>Schools</h4>
+                <h4 >Schools</h4>
                 <Link href={`/contacts/create`}>
                     <button className='btn btn-sm btn-outline-primary'>Add School</button></Link>
 
