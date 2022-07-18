@@ -23,7 +23,7 @@ export function editReducer(
     case "editSchoolLoadingUpdate":
       return { ...state, isLoading: action.payload };
     case "editSchoolUpdate":
-      return { ...state, school: { ...state.school, ...action.payload } };
+      return { ...state, school: action.payload  };
     case "editstateUpdate":
       return { ...state, ...action.payload };
     default:

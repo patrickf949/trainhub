@@ -27,7 +27,7 @@ export default function Schools({
                 </thead>
                 <tbody>
                     {allTrainingSchools.map(({ name, principal, createdAt, id }, index) => (
-                        <tr key={name}>
+                        <tr key={id}>
                             <td>{index + 1}</td>
                             <td>  <a>{name}</a>
                             </td>

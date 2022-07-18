@@ -2,10 +2,26 @@ export const initialState = {
   isLoading: false,
   school: {
     name: "",
-    id: "",
+    id: null,
     principal: "",
     healthFacility: "",
     address: "",
+    email: "",
+    district:{
+      name:null,
+      id:null,
+      createdAt:null,
+      region: { id: null, name: null,createdAt: null },
+      countys:[]
+    },
+    
+    registrationStatus:"",
+    createdAt:"",
+    districtId:'',
+    contacts: [],
+    courses: [],
+    level: 0,
+    passRate: 0,
   },
 };
 
@@ -21,7 +37,7 @@ export const editInitialState = {
     registrationStatus:"",
     contacts: [],
     courses: [],
-    level: '0',
-    passRate: '0',
+    level: '',
+    passRate: '',
   },
 };

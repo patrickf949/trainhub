@@ -16,4 +16,4 @@ export type EDITACTIONTYPE =
       type: "editstateUpdate";
       payload: { isLoading: boolean; school: schoolEditObj };
     }
-  | { type: "editSchoolUpdate"; payload: schoolEditObj };
+  | { type: "editSchoolUpdate"; payload: schoolEditObj }

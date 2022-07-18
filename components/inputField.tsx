@@ -1,10 +1,7 @@
 import { Field } from "formik";
-import { toast } from 'react-toastify';
-import { useQuery } from 'react-query'
-import Loader from './loader'
 
 export default function InputField(props) {
-    const { name, placeholder, isLoading, label,required,type } = props;
+    const { name, placeholder, isLoading, label,value, required } = props;
     return (
         <>
             <label htmlFor={name}>
@@ -12,8 +9,9 @@ export default function InputField(props) {
                 {required &&<span className='text-danger'>*</span>}
             </label>
             <Field
-                required={true} id={name}
+                required={true}
                 name={name}
+                value={value}
             >
                 {({
                     field,

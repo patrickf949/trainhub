@@ -1,8 +1,6 @@
 import Layout from '../../components/layout'
 import Link from 'next/link'
 import Head from 'next/head'
-import Date from '../../components/date'
-import utilStyles from '../../styles/utils.module.css'
 import { useReducer } from 'react'
 import { toast } from 'react-toastify';
 import { editReducer } from '../../modules/trainingSchools/store/reducer'

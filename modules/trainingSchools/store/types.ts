@@ -1,4 +1,3 @@
-import React from "react";
 import { contactObj } from "../../contacts/store/types";
 
 export type schoolData = {
@@ -63,3 +62,7 @@ export type schoolDataEditProps = {
     handleSubmit: (values:schoolEditObj) => Promise<void>;
     isProcessing: boolean;
 };
+
+export type genericItem={
+  id:string,
+}
