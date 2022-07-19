@@ -72,9 +72,9 @@ export default function School(props: schoolDataEditProps) {
                                 name={"registrationStatus"}
                                 placeholder={"Enter Registration Status"}
                                 label="Registration Status"
-                                required={true}
                                 value={props.values.registrationStatus}
                                 items={statuses}
+                                required={false}
                             ></SimpleSelector>
                             <InputField
                                 name={"email"}
@@ -82,7 +82,7 @@ export default function School(props: schoolDataEditProps) {
                                 label="School Email"
                                 isLoading={isProcessing}
                                 value={props.values.email}
-
+                                required={false}
                             ></InputField>
                             <InputField
                                 name={"healthFacility"}
@@ -90,7 +90,7 @@ export default function School(props: schoolDataEditProps) {
                                 label="Health Facility"
                                 isLoading={isProcessing}
                                 value={props.values.healthFacility}
-
+                                required={false}
                             ></InputField>
                             <InputField
                                 name={"address"}
@@ -98,6 +98,7 @@ export default function School(props: schoolDataEditProps) {
                                 label="Address"
                                 isLoading={isProcessing}
                                 value={props.values.address}
+                                required={false}
                             ></InputField>
                         </div>
                         <div className="col">
@@ -108,7 +109,6 @@ export default function School(props: schoolDataEditProps) {
                                 isLoading={isProcessing}
                                 required={false}
                                 value={props.values.level}
-                                type={'number'}
                             ></InputField>
                             <InputField
                                 name={"passRate"}
@@ -117,7 +117,6 @@ export default function School(props: schoolDataEditProps) {
                                 isLoading={isProcessing}
                                 value={props.values.passRate}
                                 required={false}
-                                type={'number'}
                             ></InputField>
                             <Selector
                                 name={"district"}
@@ -131,7 +130,7 @@ export default function School(props: schoolDataEditProps) {
                                 name={"contacts"}
                                 placeholder={"Select a contact"}
                                 label="School Contacts"
-                                required={true}
+                                required={false}
                                 field="phoneNumber"
                                 value={props.values.contacts}
                                 getRequest={getAllContacts}
@@ -143,7 +142,7 @@ export default function School(props: schoolDataEditProps) {
                                 name={"courses"}
                                 placeholder={"Select a course"}
                                 label="Courses offered"
-                                required={true}
+                                required={false}
                                 field="name"
                                 value={props.values.courses}
                                 getRequest={getAllCourses}
