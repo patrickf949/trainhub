@@ -9,6 +9,7 @@ import Edit from '../../modules/trainingSchools/components/edit'
 import { schoolEditObj } from '../../modules/trainingSchools/store/types'
 import { createTrainingSchool } from '../../modules/trainingSchools/lib/schools'
 import { useRouter } from 'next/router'
+import { nonNullValues } from '../../modules/trainingSchools/utils';
 
 
 export default function CreateSchool() {
@@ -16,14 +17,15 @@ export default function CreateSchool() {
     const [state, dispatch] = useReducer(editReducer,editInitialState);
     const handleSubmit = async (values:schoolEditObj) => {
         dispatch({ type: "editSchoolLoadingUpdate", payload: true });
-        await createTrainingSchool(values).then(() => {
+        await createTrainingSchool(nonNullValues(values)).then(() => {
             toast.success("Successfully created");
             dispatch({ type: "editSchoolLoadingUpdate", payload: false });
             router.push('/trainingSchools');
         }).catch(error => {
+            dispatch({ type: "editSchoolLoadingUpdate", payload: false });
             toast.error("Failed to create Contact");
             toast.error(error.message);
-            dispatch({ type: "editSchoolLoadingUpdate", payload: false });
+            toast.error(error.response.data.message);
         });
     }
     const {school,isLoading}=state

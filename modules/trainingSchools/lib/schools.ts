@@ -9,7 +9,7 @@ export function getTrainingSchool(id) {
   return axiosApi.get(`${API_URL}/api/v1/trainingSchools/${id}`)
 }
 
-export function createTrainingSchool(data:schoolEditObj) {
+export function createTrainingSchool(data) {
   return axiosApi.post(`${API_URL}/api/v1/trainingSchools/`,data)
 }
 
@@ -17,6 +17,6 @@ export function editTrainingSchool(data,id) {
   return axiosApi.patch(`${API_URL}/api/v1/trainingSchools/${id}`,data)
 }
 
-export function deleteTrainingSchool(id:string) {
+export function deleteTrainingSchool(id) {
   return axiosApi.delete(`${API_URL}/api/v1/trainingSchools/${id}`)
 }
