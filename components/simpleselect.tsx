@@ -15,7 +15,7 @@ export default function SimpleSelector(props) {
                 }) => (
                     <>
                         <select className='form-control' {...field}>
-                            <option value=''>Select one</option>
+                            <option value={null}>Select one</option>
 
                             {items && items.map(item =>
 

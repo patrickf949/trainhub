@@ -10,7 +10,6 @@ import Edit from '../../../modules/trainingSchools/components/edit'
 import { schoolEditObj } from '../../../modules/trainingSchools/store/types'
 import { editTrainingSchool, getTrainingSchool } from '../../../modules/trainingSchools/lib/schools'
 import { useRouter } from 'next/router'
-import { countReset } from 'console'
 import { convertToString, flattenArray, nonNullValues } from '../../../modules/trainingSchools/utils'
 import Loader from '../../../components/loader'
 
