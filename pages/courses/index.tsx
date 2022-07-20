@@ -29,7 +29,7 @@ export default function AllCourses() {
             <article>
             <Heading
                     name="Courses"
-                    link='/courses'
+                    link='/courses/create'
                     button="Add Course"
                 />
             </article>

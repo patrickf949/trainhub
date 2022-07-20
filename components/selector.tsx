@@ -31,7 +31,7 @@ export default function Selector(props) {
                 }) => (
                     <>
                         <select className='form-control' {...field} {...values}>
-                            <option value={null}>Select one</option>
+                            <option value=''>Select one</option>
 
                             {data && data.data.map(item =>
 

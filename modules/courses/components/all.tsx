@@ -33,7 +33,7 @@ export default function Courses({
         </thead>
         <tbody>
             {allCourses?.map(({ name, cadre, professionalQualification, durationYears, createdAt, id }, index) => (
-                <tr key={name}>
+                <tr key={id}>
                     <td>{index + 1}</td>
                     <td>  <a>{name}</a>
                     </td>
@@ -48,7 +48,7 @@ export default function Courses({
                         <Date dateString={createdAt} />
                     </td>
                     <td className={utilStyles.lightText}>
-                        <Link href={`/courses`}><a className='btn btn-sm btn-outline-primary float-end' >View</a></Link>
+                        <Link href={`/courses/view/${id}`}><a className='btn btn-sm btn-outline-primary float-end' >View</a></Link>
                     </td>
                 </tr>
             ))}
