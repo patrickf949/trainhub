@@ -3,18 +3,21 @@ import utilStyles from '../../../styles/utils.module.css'
 import Link from 'next/link'
 import Date from '../../../components/date'
 import { contactObj } from '../store/types'
+import Empty from '../../../components/empty'
 
 export default function Contacts({
     allContacts
 }:{
     allContacts:contactObj[]
 }) {
+    const title = 'Contacts'
+    const columns = 4
     return (
         <>
             <table className="table">
                 <thead className={utilStyles.sticky}>
                     <tr>
-                        <td colSpan={4}><b>Contacts</b></td>
+                        <td colSpan={columns}><b>{title}</b></td>
                     </tr>
                     <tr>
                         <th>#</th>
@@ -39,6 +42,7 @@ export default function Contacts({
                     ))}
 
                 </tbody>
+                {!allContacts.length && <Empty columns={columns} label={title}/>}
             </table>
 
 
