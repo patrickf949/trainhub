@@ -1,44 +1,26 @@
 
 import utilStyles from '../../../styles/utils.module.css'
 import Date from '../../../components/date'
+import Schools from '../../trainingSchools/components/all';
 
-export default function getAllContacts({
+export default function SingleContact({
     contact
-}:{
-    contact:{
-        phoneNumber:string,
-        createdAt:string,
-        id:string,
+}: {
+    contact: {
+        phoneNumber: string,
+        createdAt: string,
+        id: string,
+        trainingschools: []
     }
 }) {
-    const {phoneNumber,createdAt}=contact;
-    
+
+    const { phoneNumber, createdAt, trainingschools } = contact;
     return (
-        <>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th scope="col">Phone Number</th>
-                        <th scope="col">CreatedAt</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <><h5>{phoneNumber}</h5>
+            <Date dateString={createdAt}></Date>
 
-                    <tr >
-                        <td></td>
-                        <td>  <a>{phoneNumber}</a>
-                        </td>
-                        <td className={utilStyles.lightText}>
-                            <Date dateString={createdAt} />
-                        </td>
-                    </tr>
-
-
-                </tbody>
-            </table>
-
-
+            <hr />
+            <Schools allTrainingSchools={trainingschools}></Schools>
         </>
     )
 }

@@ -8,6 +8,7 @@ import { getContact } from '../../../modules/contacts/lib/contacts'
 import Loader from '../../../components/loader'
 import Link from 'next/link'
 import Schools from '../../../modules/trainingSchools/components/all';
+import SingleContact from '../../../modules/contacts/components/single';
 
 export default function Contact() {
     
@@ -16,7 +17,7 @@ export default function Contact() {
         await getContact(router.query.id)
             .then((res) => {
                 toast.success('Contact Loaded');
-                return res.data;
+                return res.data.data;
             })
             .catch((error) => {
                 toast.error("Failed to load Contact");
@@ -32,14 +33,11 @@ export default function Contact() {
         <title>Training Hub Contact</title>
       </Head>
       <article>
+      
       <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/contacts">Contacts</Link></p>
-        {data && <><h5>{data.data.phoneNumber}</h5>
-          <Date dateString={data.data.createdAt}></Date>
-        </>}
-        <hr/>
-        {data && <Schools allTrainingSchools={data.data.trainingschools}></Schools>}
-        {isLoading && <Loader isLoading={isLoading}></Loader>}
-
+      <Loader isProcessing={isLoading}></Loader>
+        {data && !isLoading  && <SingleContact contact={data}/>
+        }
       </article>
     </Layout>
   )
