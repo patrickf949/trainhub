@@ -25,8 +25,8 @@ export default function Courses({
                 <th scope="col">Name</th>
                 <th scope="col">Cadre</th>
                 <th scope="col">Qualification</th>
-                <th scope="col">duration</th>
-                <th scope="col">Created At</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Created on</th>
                 <th scope="col"></th>
 
             </tr>

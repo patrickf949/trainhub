@@ -24,7 +24,7 @@ export default function Schools({
                         <th>#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Principal</th>
-                        <th scope="col">CreatedAt</th>
+                        <th scope="col">Created on</th>
                         <th scope="col"></th>
 
                     </tr>

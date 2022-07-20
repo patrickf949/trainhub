@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 
 export default function Contact() {
-    const { isLoading, data,  } = useQuery("contactData", async () =>
+    const { isLoading, data, } = useQuery("contactData", async () =>
         await getAllContacts()
             .then((res) => {
                 toast.success('Contacts Loaded');
@@ -28,7 +28,7 @@ export default function Contact() {
                 <title>Contacts</title>
             </Head>
             <article>
-                <h4>Contacts</h4>
+                <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;Contacts</p>
                 <Link href={`/contacts/create`}>
                     <button className='btn btn-sm btn-outline-primary'>New Contact</button></Link>
 

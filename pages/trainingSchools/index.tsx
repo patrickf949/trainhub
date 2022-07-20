@@ -9,7 +9,7 @@ import Schools from '../../modules/trainingSchools/components/all'
 import { toast } from 'react-toastify';
 
 export default function TrainingSchools() {
-    const { isLoading, data,  } = useQuery("schoolsData", async () =>
+    const { isLoading, data, } = useQuery("schoolsData", async () =>
         await getAllTrainingSchools()
             .then((res) => {
                 toast.success('Schools Loaded');
@@ -27,7 +27,7 @@ export default function TrainingSchools() {
                 <title>Training Schools</title>
             </Head>
             <article>
-                <h4 >Schools</h4>
+                <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;Schools</p>
                 <Link href={`/trainingSchools/create`}>
                     <button className='btn btn-sm btn-outline-primary'>Add School</button></Link>
 

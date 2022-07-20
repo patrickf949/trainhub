@@ -22,7 +22,7 @@ export default function Contacts({
                     <tr>
                         <th>#</th>
                         <th scope="col">Phone Number</th>
-                        <th scope="col">CreatedAt</th>
+                        <th scope="col">Created on</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
