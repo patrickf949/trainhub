@@ -33,7 +33,7 @@ export default function Courses({
         </thead>
         <tbody>
             {allCourses?.map(({ name, cadre, professionalQualification, durationYears, createdAt, id }, index) => (
-                <tr key={name}>
+                <tr key={id}>
                     <td>{index + 1}</td>
                     <td>  <a>{name}</a>
                     </td>
