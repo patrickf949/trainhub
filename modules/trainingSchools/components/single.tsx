@@ -15,7 +15,7 @@ export default function School({
         <>
             <h1 className={utilStyles.headingXl}>{name}</h1>
             <Row name={'Principal'} value={principal}></Row>
-            <Row name={'CreatedAt'} value={createdAt &&<Date dateString={createdAt} />}></Row>
+            <Row name={'Created on'} value={createdAt &&<Date dateString={createdAt} />}></Row>
             <Row name={'Registration'} value={registrationStatus}></Row>
             <Row name={'Health Facility'} value={healthFacility}></Row>
             <Row name={'Address'} value={address}></Row>
