@@ -3,18 +3,22 @@ import utilStyles from '../../../styles/utils.module.css'
 import Link from 'next/link'
 import Date from '../../../components/date'
 import { schoolData } from '../store/types'
+import Empty from '../../../components/empty'
 
 export default function Schools({
     allTrainingSchools
 }: {
     allTrainingSchools: schoolData[]
 }) {
+    const title = 'Training Schools'
+    const columns = 5
+
     return (
         <>
             <table className="table">
                 <thead className={utilStyles.sticky}>
                     <tr>
-                        <td colSpan={5}><b>Training Schools</b></td>
+                        <td colSpan={columns}><b>{title}</b></td>
                     </tr>
                     <tr>
                         <th>#</th>
@@ -43,6 +47,7 @@ export default function Schools({
                     ))}
 
                 </tbody>
+                {!allTrainingSchools.length && <Empty columns={columns} label={title}/>}
             </table>
         </>
     )

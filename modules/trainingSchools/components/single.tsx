@@ -5,6 +5,7 @@ import Date from '../../../components/date'
 import { schoolDataProps } from '../store/types';
 import Contacts from '../../contacts/components/all';
 import Row from '../../../components/keyValue'
+import Empty from '../../../components/empty';
 
 export default function School({
     schoolData
@@ -63,6 +64,7 @@ export default function School({
                         ))}
 
                     </tbody>
+                    {!courses.length && <Empty columns={7} label={'Courses'}/>}
                 </table>}
 
                 {contacts && <Contacts allContacts={contacts}></Contacts>}
