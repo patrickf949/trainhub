@@ -2,13 +2,13 @@
 import utilStyles from '../../../styles/utils.module.css'
 import Link from 'next/link'
 import Date from '../../../components/date'
-import { courseData } from '../store/types'
+import { allCoursesData } from '../store/types'
 import Empty from '../../../components/empty'
 
 export default function Courses({
     allCourses
 }: {
-    allCourses: courseData[]
+    allCourses: allCoursesData
 }) {
     const title = 'Courses'
     const columns = 7

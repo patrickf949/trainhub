@@ -8,3 +8,12 @@ export type courseData={
     cadre:string;
     trainingschools:schoolData[]
 }
+
+export type allCoursesData={
+    name: string;
+    id:string;
+    professionalQualification:string;
+    durationYears:number; 
+    createdAt:string;
+    cadre:string;
+}[]
