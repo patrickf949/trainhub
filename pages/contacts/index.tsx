@@ -7,6 +7,7 @@ import { getAllContacts } from '../../modules/contacts/lib/contacts'
 import Loader from '../../components/loader'
 import Contacts from '../../modules/contacts/components/all'
 import { toast } from 'react-toastify';
+import Heading from '../../components/header'
 
 
 export default function Contact() {
@@ -28,10 +29,11 @@ export default function Contact() {
                 <title>Contacts</title>
             </Head>
             <article>
-                <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;Contacts</p>
-                <Link href={`/contacts/create`}>
-                    <button className='btn btn-sm btn-outline-primary'>New Contact</button></Link>
-
+                <Heading
+                    name="Contacts"
+                    link='/contacts/create'
+                    button="Add Contact"
+                />
             </article>
             <section>
                 {data && <Contacts allContacts={data.data}></Contacts>}

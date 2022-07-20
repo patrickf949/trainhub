@@ -6,9 +6,10 @@ import Loader from '../../components/loader'
 import { toast } from 'react-toastify';
 import { getAllCourses } from '../../modules/courses/lib/courses'
 import Courses from '../../modules/courses/components/all'
+import Heading from '../../components/header'
 
 export default function AllCourses() {
-    const { isLoading, data,  } = useQuery("courseData", async () =>
+    const { isLoading, data, } = useQuery("courseData", async () =>
         await getAllCourses()
             .then((res) => {
                 toast.success('Courses Loaded');
@@ -26,10 +27,11 @@ export default function AllCourses() {
                 <title>Courses</title>
             </Head>
             <article>
-                <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;Courses</p>
-                <Link href={`/courses`}>
-                    <button className='btn btn-sm btn-outline-primary'>Add School</button></Link>
-
+            <Heading
+                    name="Courses"
+                    link='/courses'
+                    button="Add Course"
+                />
             </article>
             <section>
                 {data && <Courses allCourses={data.data} />}

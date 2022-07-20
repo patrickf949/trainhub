@@ -46,7 +46,7 @@ export default function TrainingSchool() {
                     </div>
                     <div className="col">
                         <Link href={`/trainingSchools/delete/${school.id}`}>
-                            <a className='btn btn-sm btn-outline-danger float-right'>Delete</a></Link>
+                            <a className='btn btn-sm btn-outline-danger float-end'>Delete</a></Link>
                     </div>
                 </div>}
                 {!isLoading && <School schoolData={school}></School>}

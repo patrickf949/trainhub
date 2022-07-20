@@ -7,6 +7,7 @@ import { getAllTrainingSchools } from '../../modules/trainingSchools/lib/schools
 import Loader from '../../components/loader'
 import Schools from '../../modules/trainingSchools/components/all'
 import { toast } from 'react-toastify';
+import Heading from '../../components/header'
 
 export default function TrainingSchools() {
     const { isLoading, data, } = useQuery("schoolsData", async () =>
@@ -27,10 +28,11 @@ export default function TrainingSchools() {
                 <title>Training Schools</title>
             </Head>
             <article>
-                <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;Schools</p>
-                <Link href={`/trainingSchools/create`}>
-                    <button className='btn btn-sm btn-outline-primary'>Add School</button></Link>
-
+                <Heading
+                    name="Training Schools"
+                    link='/trainingSchools/create'
+                    button="Add School"
+                />
             </article>
             <section>
                 {data && <Schools allTrainingSchools={data.data}></Schools>}

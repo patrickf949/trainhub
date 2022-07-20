@@ -41,7 +41,7 @@ export default function Schools({
                                 <Date dateString={createdAt} />
                             </td>
                             <td className={utilStyles.lightText}>
-                                <Link href={`/trainingSchools/view/${id}`}><a className='btn btn-sm btn-outline-primary' >View</a></Link>
+                                <Link href={`/trainingSchools/view/${id}`}><a className='btn btn-sm btn-outline-primary float-end' >View</a></Link>
                             </td>
                         </tr>
                     ))}
