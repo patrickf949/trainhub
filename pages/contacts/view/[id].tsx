@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import { getContact } from '../../../modules/contacts/lib/contacts'
 import Loader from '../../../components/loader'
 import Link from 'next/link'
+import Schools from '../../../modules/trainingSchools/components/all';
 
 export default function Contact() {
     
@@ -35,6 +36,8 @@ export default function Contact() {
         {data && <><h5>{data.data.phoneNumber}</h5>
           <Date dateString={data.data.createdAt}></Date>
         </>}
+        <hr/>
+        {data && <Schools allTrainingSchools={data.data.trainingschools}></Schools>}
         {isLoading && <Loader isLoading={isLoading}></Loader>}
 
       </article>

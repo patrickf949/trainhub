@@ -14,7 +14,7 @@ export default function Schools({
             <table className="table">
                 <thead className={utilStyles.sticky}>
                     <tr>
-                        <td colSpan={4}><b>Training Schools</b></td>
+                        <td colSpan={5}><b>Training Schools</b></td>
                     </tr>
                     <tr>
                         <th>#</th>
@@ -37,7 +37,7 @@ export default function Schools({
                                 <Date dateString={createdAt} />
                             </td>
                             <td className={utilStyles.lightText}>
-                                <Link href={`trainingSchools/view/${id}`}><a className='btn btn-sm btn-outline-primary' >View</a></Link>
+                                <Link href={`/trainingSchools/view/${id}`}><a className='btn btn-sm btn-outline-primary' >View</a></Link>
                             </td>
                         </tr>
                     ))}
