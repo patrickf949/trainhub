@@ -1,24 +1,22 @@
 import Layout from '../../components/layout'
 import Link from 'next/link'
 import Head from 'next/head'
-import Date from '../../components/date'
 import { useQuery } from 'react-query'
-import { getAllContacts } from '../../modules/contacts/lib/contacts'
 import Loader from '../../components/loader'
-import Contacts from '../../modules/contacts/components/all'
 import { toast } from 'react-toastify';
+import { getAllCourses } from '../../modules/courses/lib/courses'
+import Courses from '../../modules/courses/components/all'
 import Heading from '../../components/header'
 
-
-export default function Contact() {
-    const { isLoading, data, } = useQuery("contactData", async () =>
-        await getAllContacts()
+export default function AllCourses() {
+    const { isLoading, data, } = useQuery("courseData", async () =>
+        await getAllCourses()
             .then((res) => {
-                toast.success('Contacts Loaded');
+                toast.success('Courses Loaded');
                 return res.data;
             })
             .catch((error) => {
-                toast.error("Failed");
+                toast.error("Failed to load courses");
                 toast.error(error.message);
             })
     );
@@ -26,17 +24,17 @@ export default function Contact() {
     return (
         <Layout>
             <Head>
-                <title>Contacts</title>
+                <title>Courses</title>
             </Head>
             <article>
-                <Heading
-                    name="Contacts"
-                    link='/contacts/create'
-                    button="Add Contact"
+            <Heading
+                    name="Courses"
+                    link='/courses'
+                    button="Add Course"
                 />
             </article>
             <section>
-                {data && <Contacts allContacts={data.data}></Contacts>}
+                {data && <Courses allCourses={data.data} />}
                 {isLoading && <Loader isLoading={isLoading}></Loader>}
             </section>
         </Layout>

@@ -22,7 +22,7 @@ export default function Contacts({
                     <tr>
                         <th>#</th>
                         <th scope="col">Phone Number</th>
-                        <th scope="col">CreatedAt</th>
+                        <th scope="col">Created on</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -36,7 +36,7 @@ export default function Contacts({
                                     <Date dateString={createdAt} />
                                 </td>
                                 <td className={utilStyles.lightText}>
-                                    <Link href={`/contacts/view/${id}`}><a className='btn btn-sm btn-outline-primary' >View</a></Link>
+                                    <Link href={`/contacts/view/${id}`}><a className='btn btn-sm btn-outline-primary float-end' >View</a></Link>
                                 </td>
                         </tr>
                     ))}
