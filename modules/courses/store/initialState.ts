@@ -10,3 +10,15 @@ export const initialState = {
         trainingschools:[]
     }
 }
+
+export const editInitialState = {
+    isLoading:false,
+    course:{
+        name: '',
+        professionalQualification:'',
+        durationYears:0,
+        createdAt:'',
+        cadre:'',
+        trainingschools:[]
+    }
+}
