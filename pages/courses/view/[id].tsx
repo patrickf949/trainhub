@@ -1,6 +1,5 @@
 import Layout from '../../../components/layout'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import { toast } from 'react-toastify';
 import { reducer } from "../../../modules/courses/store/reducer"
@@ -10,7 +9,6 @@ import Loader from '../../../components/loader'
 import Link from 'next/link'
 import Course from '../../../modules/courses/components/single';
 import { getCourse } from '../../../modules/courses/lib/courses';
-import { GetServerSideProps} from 'next'
 
 export default function SingleCourse({courseId}:{courseId:string}) {
     const [state, dispatch] = useReducer(reducer, initialState);

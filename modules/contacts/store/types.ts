@@ -10,6 +10,10 @@ export type contactObj = {
   createdAt: string;
   trainingschools:string[];
 };
+export type editContactObj = {
+  phoneNumber: string;
+  trainingschools:string[];
+};
 
 export type contactProp = {
   children:ReactNode,

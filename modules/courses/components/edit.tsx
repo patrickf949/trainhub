@@ -1,7 +1,7 @@
 
 import { Formik, Field, Form, useFormik } from 'formik';
 import Loader from '../../../components/loader';
-import { editCourseData, editCourseProps } from '../store/types';
+import { editCourseProps } from '../store/types';
 import * as Yup from 'yup';
 import InputField from '../../../components/inputField';
 import MultiSelector from '../../../components/multiSelect';

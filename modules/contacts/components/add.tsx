@@ -40,7 +40,7 @@ export default function Contact(props) {
                         field={"name"}
                         getRequest={getAllTrainingSchools}
                     ></MultiSelector>
-                    <Loader isProcessing={isProcessing}></Loader>
+                    {isProcessing&&<Loader isProcessing={isProcessing}></Loader>}
                     <button hidden={isProcessing} className='btn btn-sm btn-outline-primary' type="submit">Submit</button>
                 </Form>
             </Formik>
