@@ -33,6 +33,7 @@ export default function UpdateSchool({schoolId}) {
                 editschool.level = convertToString(editschool.level);
                 delete editschool['id'];
                 delete editschool['districtId'];
+                editschool = {editInitialState,...nonNullValues(editschool)}
                 dispatch({ type: "editSchoolUpdate", payload: editschool });
                 return res.data;
             })

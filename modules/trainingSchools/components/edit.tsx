@@ -1,7 +1,7 @@
 
-import { Formik, Field, Form, useFormik } from 'formik';
+import { Formik, Form } from 'formik';
 import Loader from '../../../components/loader';
-import { schoolDataEditProps, schoolDataProps } from '../store/types';
+import { schoolDataEditProps } from '../store/types';
 import * as Yup from 'yup';
 import InputField from '../../../components/inputField';
 import Selector from '../../../components/selector';
@@ -10,6 +10,7 @@ import MultiSelector from '../../../components/multiSelect';
 import { getAllContacts } from '../../contacts/lib/contacts';
 import { getAllCourses } from '../../courses/lib/courses';
 import SimpleSelector from '../../../components/simpleselect';
+import Link from 'next/link';
 
 export default function School(props: schoolDataEditProps) {
 
@@ -144,7 +145,8 @@ export default function School(props: schoolDataEditProps) {
 
                     <hr />
                     <Loader isProcessing={isProcessing}></Loader>
-                    <button hidden={isProcessing} className='btn btn-sm btn-outline-primary' type="submit">Submit</button>
+                    <Link href="/trainingSchools"><button hidden={isProcessing} className='btn btn-sm btn-outline-danger' type="button">Cancel</button></Link>
+                    <button hidden={isProcessing} className='btn btn-sm btn-outline-primary float-end' type="submit">Submit</button>
                 </Form>
             </Formik>
         </div>

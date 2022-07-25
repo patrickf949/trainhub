@@ -5,7 +5,7 @@ export async function getAllTrainingSchools() {
   return axiosApi.get(`${API_URL}/api/v1/trainingSchools/`)
 }
 
-export function getTrainingSchool(id) {
+export function getTrainingSchool(id:string) {
   return axiosApi.get(`${API_URL}/api/v1/trainingSchools/${id}`)
 }
 
@@ -13,10 +13,10 @@ export function createTrainingSchool(data) {
   return axiosApi.post(`${API_URL}/api/v1/trainingSchools/`,data)
 }
 
-export function editTrainingSchool(data,id) {
+export function editTrainingSchool(data,id:string) {
   return axiosApi.patch(`${API_URL}/api/v1/trainingSchools/${id}`,data)
 }
 
-export function deleteTrainingSchool(id) {
+export function deleteTrainingSchool(id:string) {
   return axiosApi.delete(`${API_URL}/api/v1/trainingSchools/${id}`)
 }

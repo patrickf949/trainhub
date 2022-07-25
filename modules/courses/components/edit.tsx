@@ -1,11 +1,12 @@
 
-import { Formik, Field, Form, useFormik } from 'formik';
+import { Formik, Form,  } from 'formik';
 import Loader from '../../../components/loader';
-import { editCourseData, editCourseProps } from '../store/types';
+import { editCourseProps } from '../store/types';
 import * as Yup from 'yup';
 import InputField from '../../../components/inputField';
 import MultiSelector from '../../../components/multiSelect';
 import { getAllTrainingSchools } from '../../trainingSchools/lib/schools';
+import Link from 'next/link';
 
 export default function Course(props: editCourseProps) {
 
@@ -77,7 +78,8 @@ export default function Course(props: editCourseProps) {
                     </div>
                     <hr />
                     <Loader isProcessing={isProcessing}></Loader>
-                    <button hidden={isProcessing} className='btn btn-sm btn-outline-primary' type="submit">Submit</button>
+                    <Link href="/courses"><button hidden={isProcessing} className='btn btn-sm btn-outline-danger' type="button">Cancel</button></Link>
+                    <button hidden={isProcessing} className='btn btn-sm btn-outline-primary float-end' type="submit">Submit</button>
                 </Form>
             </Formik>
         </div>

@@ -60,7 +60,7 @@ export default function UpdateCourse({ courseId }) {
     return (
         <Layout>
             <Head>
-                <title>Edit Training School</title>
+                <title>Edit Course</title>
             </Head>
             <article>
                 <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;
