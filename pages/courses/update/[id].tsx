@@ -25,7 +25,7 @@ export default function UpdateCourse({ courseId }) {
             .then((res) => {
                 toast.success('Course Loaded');
                 dispatch({ type: "editCourseLoading", payload: false });
-                let editcourse = res.data.data;
+                let editcourse = {...editInitialState.course,...res.data.data};
                 editcourse.trainingschools = flattenArray(editcourse.trainingschools);
                 delete editcourse['id'];
                 dispatch({ type: "editCourse", payload: editcourse });
