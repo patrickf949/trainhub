@@ -1,6 +1,5 @@
 import Layout from '../../../components/layout'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import { toast } from 'react-toastify';
 import { getTrainingSchool } from '../../../modules/trainingSchools/lib/schools'
@@ -11,14 +10,14 @@ import School from '../../../modules/trainingSchools/components/single'
 import Loader from '../../../components/loader'
 import Link from 'next/link'
 
-export default function TrainingSchool() {
-    const router = useRouter();
+export default function TrainingSchool({schoolId}) {
+
     const [state, dispatch] = useReducer(reducer, initialState);
     const { isLoading, school } = state
 
-    const load = useQuery("singleSchoolData", async () => {
+    useQuery("singleSchoolData", async () => {
         dispatch({ type: "SchoolLoadingUpdate", payload: true });
-        await getTrainingSchool(router.query.id)
+        await getTrainingSchool(schoolId)
             .then((res) => {
                 toast.success('School Loaded');
                 dispatch({ type: "SchoolLoadingUpdate", payload: false });
@@ -41,11 +40,11 @@ export default function TrainingSchool() {
                 <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/trainingSchools">Schools</Link></p>
                 {school.id && <div className='row'>
                     <div className="col">
-                        <Link href={`/trainingSchools/update/${school.id}`}>
+                        <Link href={`/trainingSchools/update/${schoolId}`}>
                             <a className='btn btn-sm btn-outline-primary'>Update</a></Link>
                     </div>
                     <div className="col">
-                        <Link href={`/trainingSchools/delete/${school.id}`}>
+                        <Link href={`/trainingSchools/delete/${schoolId}`}>
                             <a className='btn btn-sm btn-outline-danger float-end'>Delete</a></Link>
                     </div>
                 </div>}
@@ -55,3 +54,10 @@ export default function TrainingSchool() {
         </Layout>
     )
 }
+export async function getServerSideProps({ params }) {
+    return {
+      props: {
+        schoolId:params.id
+      }
+    }
+  }

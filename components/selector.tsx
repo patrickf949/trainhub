@@ -2,9 +2,10 @@ import { Field } from "formik";
 import { toast } from 'react-toastify';
 import { useQuery } from 'react-query'
 import Loader from './loader'
+import Select from "react-select";
 
 export default function Selector(props) {
-    const { getRequest, name, label, value, items, required } = props;
+    const { getRequest, name, label,placeholder, required } = props;
     const { isLoading, data, } = useQuery(`get${name}`, async () =>
         await getRequest()
             .then((res) => {
@@ -17,6 +18,8 @@ export default function Selector(props) {
             }
             ))
 
+    const options = data && data.data.map((item) => { return { label: item.name, value: item.id } })
+
     return (
         <>
             <label htmlFor={name}>
@@ -25,18 +28,20 @@ export default function Selector(props) {
             </label>
             <Field className='form-control' name={name}>
                 {({
+                    form,
                     field,
-                    values,
                     meta,
                 }) => (
                     <>
-                        <select className='form-control' {...field} {...values}>
-                            <option value=''>Select one</option>
-
-                            {data && data.data.map(item =>
-
-                                <option key={item.id} value={item.id}>{item.name}</option>)}
-                        </select>
+                        <Select
+                            value={options ? options.filter(each => field.value.includes(each.value))[0] : null}
+                            options={options}
+                            isLoading={isLoading}
+                            placeholder={placeholder}
+                            onChange={option =>
+                                form.setFieldValue(field.name, option.value)
+                            }
+                        />
                         {meta.touched && meta.error && (
                             <div className="text-danger">{meta.error}</div>
                         )}

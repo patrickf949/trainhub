@@ -5,27 +5,22 @@ import { useQuery } from 'react-query'
 import { toast } from 'react-toastify';
 import { reducer } from "../../../modules/courses/store/reducer"
 import { initialState } from '../../../modules/courses/store/initialState'
-import { useEffect, useReducer } from 'react'
+import { useReducer } from 'react'
 import Loader from '../../../components/loader'
 import Link from 'next/link'
 import Course from '../../../modules/courses/components/single';
 import { getCourse } from '../../../modules/courses/lib/courses';
+import { GetServerSideProps} from 'next'
 
-export default function SingleCourse() {
-    const router = useRouter();
-    
-      
+export default function SingleCourse({courseId}:{courseId:string}) {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { course,isLoading } = state
-    const id = useEffect(()=>{
-        
-    },[router.query.id])
 
     useQuery("singleCourseData", async () => {
 
         dispatch({ type: "CourseLoading", payload: true });
         
-            await getCourse(router.query.id)
+            await getCourse(courseId)
             .then((res) => {
                 toast.success('Course loaded');
                 dispatch({ type: "CourseLoading", payload: false });
@@ -46,13 +41,13 @@ export default function SingleCourse() {
             </Head>
             <article>
                 <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/courses">Courses</Link></p>
-                {course.id && <><div className='row'>
+                {course.name && !isLoading && <><div className='row'>
                     <div className="col">
-                        <Link href={`/courses/update/${course.id}`}>
+                        <Link href={`/courses/update/${courseId}`}>
                             <a className='btn btn-sm btn-outline-primary'>Update</a></Link>
                     </div>
                     <div className="col">
-                        <Link href={`/courses/delete/${course.id}`}>
+                        <Link href={`/courses/delete/${courseId}`}>
                             <a className='btn btn-sm btn-outline-danger float-end'>Delete</a></Link>
                     </div>
                 </div><Course course={course}></Course></>}
@@ -61,3 +56,10 @@ export default function SingleCourse() {
         </Layout>
     )
 }
+export async function getServerSideProps({ params }:GetServerSideProps) {
+    return {
+      props: {
+        courseId:params.id
+      }
+    }
+  }

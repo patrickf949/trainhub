@@ -1,11 +1,17 @@
 import { Field } from "formik";
 import { toast } from 'react-toastify';
 import { useQuery } from 'react-query'
-import Loader from './loader'
+import Select from "react-select";
 
 export default function MultiSelector(props) {
-    const { getRequest, name, label, field, items, required } = props;
-    
+    const {
+        getRequest,
+        name,
+        label,
+        field,
+        required
+    } = props;
+
     const { isLoading, data, } = useQuery(`get${name}`, async () =>
         await getRequest()
             .then((res) => {
@@ -17,12 +23,14 @@ export default function MultiSelector(props) {
                 toast.error(error.message);
             }))
 
+    const options = data && data.data.map((item) => { return { label: item[field], value: item.id } })
     return (
         <>
             <label htmlFor={name}>
                 {label}
                 {required && <span className='text-danger'>*</span>}
             </label>
+
             <Field
                 component="select"
                 id={name}
@@ -30,13 +38,26 @@ export default function MultiSelector(props) {
                 name={name}
                 multiple={true}
             >
-
-                {data && data.data.map(item =>
-                    <option key={item.id} value={item.id}>{item[field]}</option>)}
-
+                {({ form, field, meta }) =>{
+                    console.log(field)
+                    return <>
+                        <Select
+                            value={options ? options.filter(each => field.value.includes(each.value)) : []}
+                            isMulti={true}
+                            options={options}
+                            isLoading={isLoading}
+                            onChange={option =>
+                                form.setFieldValue(field.name, option.map(each => each.value))
+                            }
+                        />
+                        {meta.touched && meta.error && <div className="text-danger">
+                            {meta.error}
+                        </div>}
+                    </>
+                }
+                }
             </Field>
-            <Loader isProcessing={isLoading}></Loader>
-            <br/>
+            <br />
         </>
     );
 };

@@ -1,7 +1,7 @@
 import { Field } from "formik";
 
 export default function InputField(props) {
-    const { name, placeholder, isLoading, label,value, required } = props;
+    const { name, placeholder, isLoading, label, required } = props;
     return (
         <>
             <label htmlFor={name}>
@@ -11,7 +11,7 @@ export default function InputField(props) {
             <Field
                 required={true}
                 name={name}
-                value={value}
+
             >
                 {({
                     field,

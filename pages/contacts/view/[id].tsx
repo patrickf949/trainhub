@@ -1,20 +1,16 @@
 import Layout from '../../../components/layout'
 import Head from 'next/head'
-import Date from '../../../components/date'
 import { toast } from 'react-toastify';
 import { useQuery } from 'react-query'
-import { useRouter } from 'next/router'
 import { getContact } from '../../../modules/contacts/lib/contacts'
 import Loader from '../../../components/loader'
 import Link from 'next/link'
-import Schools from '../../../modules/trainingSchools/components/all';
 import SingleContact from '../../../modules/contacts/components/single';
 
-export default function Contact() {
+export default function Contact({contactId}:{contactId:string}) {
     
-    const router = useRouter()
     const { isLoading, data,  } = useQuery("singleContactData", async () =>
-        await getContact(router.query.id)
+        await getContact(contactId)
             .then((res) => {
                 toast.success('Contact Loaded');
                 return res.data.data;
@@ -43,3 +39,10 @@ export default function Contact() {
   )
 }
 
+export async function getServerSideProps({ params }) {
+  return {
+    props: {
+      contactId:params.id
+    }
+  }
+}
