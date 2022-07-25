@@ -2,16 +2,16 @@ export const initialState = {
   isLoading: false,
   school: {
     name: "",
-    id: null,
+    id: '',
     principal: "",
     healthFacility: "",
     address: "",
     email: "",
     district:{
-      name:null,
-      id:null,
-      createdAt:null,
-      region: { id: null, name: null,createdAt: null },
+      name:'',
+      id:'',
+      createdAt:'',
+      region: { id: '', name: '',createdAt: '' },
       countys:[]
     },
     

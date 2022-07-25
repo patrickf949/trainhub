@@ -1,4 +1,4 @@
-import { genericItem, schoolEditObj } from "./store/types";
+import { genericItem } from "./store/types";
 
 export function flattenArray(array:Array<genericItem>){
     return array.map(item=>item.id)
