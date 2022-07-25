@@ -26,7 +26,7 @@ export function AuthProvider({ children }: Props) {
         setUser(true);
     };
     const logout = () => {
-        localStorage.clear();
+        sessionStorage.clear();
         setUser(false);
     };
 
