@@ -1,6 +1,5 @@
 import Layout from '../../../components/layout'
 import Head from 'next/head'
-import Date from '../../../components/date'
 import utilStyles from '../../../styles/utils.module.css'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
@@ -19,7 +18,7 @@ export default function DeleteTrainingSchool({schoolId}) {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { isLoading, school } = state
 
-    const load = useQuery("singleSchoolData", async () => {
+    useQuery("singleSchoolData", async () => {
         dispatch({ type: "SchoolLoadingUpdate", payload: true });
         await getTrainingSchool(schoolId)
             .then((res) => {
