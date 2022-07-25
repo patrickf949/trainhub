@@ -1,7 +1,6 @@
 import { Field } from "formik";
 import { toast } from 'react-toastify';
 import { useQuery } from 'react-query'
-import Loader from './loader'
 import Select from "react-select";
 
 export default function Selector(props) {
@@ -47,7 +46,6 @@ export default function Selector(props) {
                         )}
                     </>)}
             </Field>
-            <Loader isProcessing={isLoading}></Loader>
             <br />
         </>
     );

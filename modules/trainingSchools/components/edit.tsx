@@ -1,7 +1,7 @@
 
-import { Formik, Field, Form, useFormik } from 'formik';
+import { Formik, Form } from 'formik';
 import Loader from '../../../components/loader';
-import { schoolDataEditProps, schoolDataProps } from '../store/types';
+import { schoolDataEditProps } from '../store/types';
 import * as Yup from 'yup';
 import InputField from '../../../components/inputField';
 import Selector from '../../../components/selector';

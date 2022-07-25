@@ -2,9 +2,7 @@ import Layout from '../../components/layout'
 import Link from 'next/link'
 import Head from 'next/head'
 import Contact from '../../modules/contacts/components/add'
-import { contactObj } from '../../modules/contacts/store/types'
-import { useEffect, useReducer, useState } from 'react'
-import { useQuery } from 'react-query'
+import { useReducer } from 'react'
 import { createContact } from '../../modules/contacts/lib/contacts'
 import { toast } from 'react-toastify';
 import { reducer } from "../../modules/contacts/store/reducer"

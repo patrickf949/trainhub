@@ -1,4 +1,3 @@
-import { useReducer } from "react"
 import { ACTIONTYPE } from "./actions";
 import { initialState } from "./initialState";
 
@@ -8,9 +7,9 @@ export function reducer(state: typeof initialState, action: ACTIONTYPE) {
       case "ContactLoadingChange":
         return { isLoading: action.payload };
       case "ContactUpdate":
-        return { contact: action.payload };
+        return { contact: {...state.contact,...action.payload }};
     case "stateUpdate":
-        return { ...action.payload };
+        return { ...state,...action.payload };
       default:
         throw new Error();
     }
