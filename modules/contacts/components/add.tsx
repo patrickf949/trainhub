@@ -43,7 +43,7 @@ export default function Contact(props) {
                     ></MultiSelector>
                     {isProcessing && <Loader isProcessing={isProcessing}></Loader>}
                     <Link href="/contacts"><button hidden={isProcessing} className='btn btn-sm btn-outline-danger' type="button">Cancel</button></Link>
-                    <button hidden={isProcessing} className='btn btn-sm btn-outline-primary' type="submit">Submit</button>
+                    <button hidden={isProcessing} className='btn btn-sm btn-outline-primary float-end' type="submit">Submit</button>
                 </Form>
             </Formik>
         </div>

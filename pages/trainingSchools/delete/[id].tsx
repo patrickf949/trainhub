@@ -53,13 +53,13 @@ export default function DeleteTrainingSchool({schoolId}) {
             </Head>
             <article>
             <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/trainingSchools">Schools</Link></p>
-            <DeleteSchool schoolData={school} handleDelete={handleDelete} ></DeleteSchool>
+            {!isLoading && school.name.length>1 && <><DeleteSchool schoolData={school} handleDelete={handleDelete} ></DeleteSchool>
                 <div className={utilStyles.halfPage}>
 
                 
-                <School  schoolData={school}></School>
+                <School  schoolData={school}></School></div></>}
                 <Loader isProcessing={isLoading}></Loader>
-                </div>
+                
             </article>
         </Layout>
     )

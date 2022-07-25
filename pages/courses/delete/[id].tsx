@@ -13,12 +13,12 @@ import Loader from '../../../components/loader'
 import Link from 'next/link'
 import DeleteCourse from '../../../modules/courses/components/delete'
 
-export default function DeleteTrainingSchool({ courseId }) {
+export default function DeleteSingleCourse({ courseId }) {
     const router = useRouter();
     const [state, dispatch] = useReducer(reducer, initialState);
 
 
-    useQuery("singleSchoolData", async () => {
+    useQuery("singleCourseData", async () => {
         dispatch({ type: "CourseLoading", payload: true });
 
         await getCourse(courseId)
