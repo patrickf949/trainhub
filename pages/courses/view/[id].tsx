@@ -56,7 +56,7 @@ export default function SingleCourse({courseId}:{courseId:string}) {
         </Layout>
     )
 }
-export async function getServerSideProps({ params }:GetServerSideProps) {
+export async function getServerSideProps({ params }) {
     return {
       props: {
         courseId:params.id

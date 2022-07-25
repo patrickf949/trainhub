@@ -21,13 +21,13 @@ export default function School(props: schoolDataEditProps) {
             .required("Principal is required")
             .min(4, "Principal name must be at least 4 characters")
             .max(60, "Principal namme must not exceed 60 characters"),
-        registrationStatus: Yup.string().oneOf([null,...statuses], 'Will default to full registration').nullable(),
+        registrationStatus: Yup.string().oneOf([null, ...statuses], 'Will default to full registration').nullable(),
         email: Yup.string().email("Email is invalid")
-        .nullable(),
+            .nullable(),
         district: Yup.string().required("District is required")
-        .min(1,'Please select a district'),
+            .min(1, 'Please select a district'),
         healthFacility: Yup.string()
-            .min(4,"Health facility must be atleast 4 characters")
+            .min(4, "Health facility must be atleast 4 characters")
             .nullable(),
         passRate: Yup.string()
             .trim()
@@ -38,7 +38,7 @@ export default function School(props: schoolDataEditProps) {
             .matches(/^[0-9]+$/, 'Must be digits')
             .nullable(),
         contacts: Yup.array(),
-        courses:Yup.array(),
+        courses: Yup.array(),
     });
 
     return (
@@ -48,8 +48,7 @@ export default function School(props: schoolDataEditProps) {
                 onSubmit={handleSubmit}
                 validationSchema={validationSchema}
             >
-                {(props) => {
-              return <Form className="form-control" >
+                <Form className="form-control" >
                     <div className="row">
                         <div className="col">
                             <InputField
@@ -147,7 +146,6 @@ export default function School(props: schoolDataEditProps) {
                     <Loader isProcessing={isProcessing}></Loader>
                     <button hidden={isProcessing} className='btn btn-sm btn-outline-primary' type="submit">Submit</button>
                 </Form>
-                }}
             </Formik>
         </div>
     );

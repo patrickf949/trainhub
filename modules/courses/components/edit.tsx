@@ -35,52 +35,50 @@ export default function Course(props: editCourseProps) {
                 onSubmit={handleSubmit}
                 validationSchema={validationSchema}
             >
-                {(props) => {
-                    console.log(props)
-                    return <Form className="form-control">
-                        <div className="row">
-                            <InputField
-                                name="name"
-                                placeholder="Enter Course name"
-                                label="Course name"
-                                isLoading={isProcessing}
-                                required={true}
-                            ></InputField>
-                            <InputField
-                                name={"cadre"}
-                                placeholder={"Enter Cadre"}
-                                label={"Cadre"}
-                                isLoading={isProcessing}
-                                required={false}
-                            ></InputField>
-                            <InputField
-                                name={"professionalQualification"}
-                                placeholder={"Enter Professional Qualification"}
-                                label="Professional Qualification"
-                                required={false}
-                            ></InputField>
-                            <InputField
-                                name={"durationYears"}
-                                placeholder={"Enter Course Duration"}
-                                label="Course Duration"
-                                isLoading={isProcessing}
-                                required={false}
-                            ></InputField>
-                            <MultiSelector
-                                name={"trainingschools"}
-                                placeholder={"Select a School"}
-                                label={"Training Schools"}
-                                required={false}
-                                field={"name"}
-                                getRequest={getAllTrainingSchools}
-                                multi={true}
-                            ></MultiSelector>
-                        </div>
-                        <hr />
-                        <Loader isProcessing={isProcessing}></Loader>
-                        <button hidden={isProcessing} className='btn btn-sm btn-outline-primary' type="submit">Submit</button>
-                    </Form>
-                }}
+
+                <Form className="form-control">
+                    <div className="row">
+                        <InputField
+                            name="name"
+                            placeholder="Enter Course name"
+                            label="Course name"
+                            isLoading={isProcessing}
+                            required={true}
+                        ></InputField>
+                        <InputField
+                            name={"cadre"}
+                            placeholder={"Enter Cadre"}
+                            label={"Cadre"}
+                            isLoading={isProcessing}
+                            required={false}
+                        ></InputField>
+                        <InputField
+                            name={"professionalQualification"}
+                            placeholder={"Enter Professional Qualification"}
+                            label="Professional Qualification"
+                            required={false}
+                        ></InputField>
+                        <InputField
+                            name={"durationYears"}
+                            placeholder={"Enter Course Duration"}
+                            label="Course Duration"
+                            isLoading={isProcessing}
+                            required={false}
+                        ></InputField>
+                        <MultiSelector
+                            name={"trainingschools"}
+                            placeholder={"Select a School"}
+                            label={"Training Schools"}
+                            required={false}
+                            field={"name"}
+                            getRequest={getAllTrainingSchools}
+                            multi={true}
+                        ></MultiSelector>
+                    </div>
+                    <hr />
+                    <Loader isProcessing={isProcessing}></Loader>
+                    <button hidden={isProcessing} className='btn btn-sm btn-outline-primary' type="submit">Submit</button>
+                </Form>
             </Formik>
         </div>
     );

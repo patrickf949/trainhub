@@ -42,7 +42,7 @@ export default function Selector(props) {
                                 form.setFieldValue(field.name, option.value)
                             }
                         />
-                        {meta.touched && meta.error && (
+                        {meta.error && (
                             <div className="text-danger">{meta.error}</div>
                         )}
                     </>)}

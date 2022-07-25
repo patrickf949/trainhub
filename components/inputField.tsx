@@ -19,7 +19,7 @@ export default function InputField(props) {
                 }) => (
                     <div>
                         <input disabled={isLoading} className='form-control' type="text" placeholder={placeholder} {...field} />
-                        {meta.touched && meta.error && (
+                        {meta.error && (
                             <div className="text-danger">{meta.error}</div>
                         )}
                     </div>

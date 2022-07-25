@@ -38,9 +38,8 @@ export default function MultiSelector(props) {
                 name={name}
                 multiple={true}
             >
-                {({ form, field, meta }) =>{
-                    console.log(field)
-                    return <>
+                {({ form, field, meta }) =>
+                    <>
                         <Select
                             value={options ? options.filter(each => field.value.includes(each.value)) : []}
                             isMulti={true}
@@ -54,7 +53,6 @@ export default function MultiSelector(props) {
                             {meta.error}
                         </div>}
                     </>
-                }
                 }
             </Field>
             <br />
