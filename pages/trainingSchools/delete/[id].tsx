@@ -1,6 +1,5 @@
 import Layout from '../../../components/layout'
 import Head from 'next/head'
-import Date from '../../../components/date'
 import utilStyles from '../../../styles/utils.module.css'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
@@ -19,7 +18,7 @@ export default function DeleteTrainingSchool({schoolId}) {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { isLoading, school } = state
 
-    const load = useQuery("singleSchoolData", async () => {
+    useQuery("singleSchoolData", async () => {
         dispatch({ type: "SchoolLoadingUpdate", payload: true });
         await getTrainingSchool(schoolId)
             .then((res) => {
@@ -54,13 +53,13 @@ export default function DeleteTrainingSchool({schoolId}) {
             </Head>
             <article>
             <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/trainingSchools">Schools</Link></p>
-            <DeleteSchool schoolData={school} handleDelete={handleDelete} ></DeleteSchool>
+            {!isLoading && school.name.length>1 && <><DeleteSchool schoolData={school} handleDelete={handleDelete} ></DeleteSchool>
                 <div className={utilStyles.halfPage}>
 
                 
-                <School  schoolData={school}></School>
+                <School  schoolData={school}></School></div></>}
                 <Loader isProcessing={isLoading}></Loader>
-                </div>
+                
             </article>
         </Layout>
     )

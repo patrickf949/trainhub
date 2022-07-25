@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import MultiSelector from '../../../components/multiSelect';
 import { getAllTrainingSchools } from '../../trainingSchools/lib/schools';
 import InputField from '../../../components/inputField';
+import Link from 'next/link';
 
 export default function Contact(props) {
     const { contact, handleSubmit, isProcessing } = props;
@@ -40,8 +41,9 @@ export default function Contact(props) {
                         field={"name"}
                         getRequest={getAllTrainingSchools}
                     ></MultiSelector>
-                    {isProcessing&&<Loader isProcessing={isProcessing}></Loader>}
-                    <button hidden={isProcessing} className='btn btn-sm btn-outline-primary' type="submit">Submit</button>
+                    {isProcessing && <Loader isProcessing={isProcessing}></Loader>}
+                    <Link href="/contacts"><button hidden={isProcessing} className='btn btn-sm btn-outline-danger' type="button">Cancel</button></Link>
+                    <button hidden={isProcessing} className='btn btn-sm btn-outline-primary float-end' type="submit">Submit</button>
                 </Form>
             </Formik>
         </div>

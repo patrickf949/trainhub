@@ -31,7 +31,7 @@ export default function Contact({ contactId }: { contactId: string }) {
       <article>
 
         <p> <Link href="/">Menu</Link>&nbsp;&gt;&nbsp;<Link href="/contacts">Contacts</Link></p>
-        <Loader isProcessing={isLoading}></Loader>
+        {isLoading && <Loader isProcessing={isLoading}></Loader>}
         {data && !isLoading && <><div className='row'><div className="col">
           <Link href={`/contacts/update/${contactId}`}>
             <a className='btn btn-sm btn-outline-primary'>Update</a></Link>

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { schoolData } from "../../trainingSchools/store/types";
 
 export type contact = {
   contact: contactObj;
@@ -8,7 +9,7 @@ export type contactObj = {
   id: string;
   phoneNumber: string;
   createdAt: string;
-  trainingschools:string[];
+  trainingschools:schoolData[];
 };
 export type editContactObj = {
   phoneNumber: string;
