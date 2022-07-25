@@ -8,6 +8,7 @@ export type contactObj = {
   id: string;
   phoneNumber: string;
   createdAt: string;
+  trainingschools:string[];
 };
 
 export type contactProp = {

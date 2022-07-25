@@ -1,7 +1,7 @@
 import { Field } from "formik";
 
 export default function InputField(props) {
-    const { name, placeholder, isLoading, label,value, required } = props;
+    const { name, placeholder, isLoading, label, required } = props;
     return (
         <>
             <label htmlFor={name}>
@@ -11,7 +11,7 @@ export default function InputField(props) {
             <Field
                 required={true}
                 name={name}
-                value={value}
+
             >
                 {({
                     field,
@@ -19,7 +19,7 @@ export default function InputField(props) {
                 }) => (
                     <div>
                         <input disabled={isLoading} className='form-control' type="text" placeholder={placeholder} {...field} />
-                        {meta.touched && meta.error && (
+                        {meta.error && (
                             <div className="text-danger">{meta.error}</div>
                         )}
                     </div>

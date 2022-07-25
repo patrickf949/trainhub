@@ -14,14 +14,14 @@ import DeleteSchool from '../../../modules/trainingSchools/components/delete'
 import Loader from '../../../components/loader'
 import Link from 'next/link'
 
-export default function TrainingSchool() {
+export default function DeleteTrainingSchool({schoolId}) {
     const router = useRouter();
     const [state, dispatch] = useReducer(reducer, initialState);
     const { isLoading, school } = state
 
     const load = useQuery("singleSchoolData", async () => {
         dispatch({ type: "SchoolLoadingUpdate", payload: true });
-        await getTrainingSchool(router.query.id)
+        await getTrainingSchool(schoolId)
             .then((res) => {
                 toast.success('School Loaded');
                 dispatch({ type: "SchoolLoadingUpdate", payload: false });
@@ -36,7 +36,7 @@ export default function TrainingSchool() {
     });
     const handleDelete = async () => {
         dispatch({ type: "SchoolLoadingUpdate", payload: true });
-        await deleteTrainingSchool(school.id).then(() => {
+        await deleteTrainingSchool(schoolId).then(() => {
             toast.success("Successfully deleted");
             dispatch({ type: "SchoolLoadingUpdate", payload: false });
             router.push('/trainingSchools');
@@ -65,3 +65,11 @@ export default function TrainingSchool() {
         </Layout>
     )
 }
+
+export async function getServerSideProps({ params }) {
+    return {
+      props: {
+        schoolId:params.id
+      }
+    }
+  }

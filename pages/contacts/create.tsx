@@ -19,7 +19,7 @@ export default function CreateContact() {
     const [state, dispatch] = useReducer(reducer,initialState);
 
 
-    const handleSubmit = async (values, { setSubmitting, setFieldError, setStatus, isProcessing }) => {
+    const handleSubmit = async (values) => {
         dispatch({ type: "ContactLoadingChange", payload: true });
         await createContact(values).then(() => {
             toast.success("Successfully created");
@@ -43,7 +43,6 @@ export default function CreateContact() {
                 <Contact
                     contact={contact}
                     handleSubmit={handleSubmit}
-
                     isProcessing={isLoading}
                 >
                 </Contact>
