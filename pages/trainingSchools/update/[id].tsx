@@ -14,15 +14,14 @@ import { convertToString, flattenArray, nonNullValues } from '../../../modules/t
 import Loader from '../../../components/loader'
 
 
-export default function CreateSchool() {
+export default function UpdateSchool({schoolId}) {
     const router = useRouter();
     const [state, dispatch] = useReducer(editReducer, editInitialState);
     const { isLoading, school } = state;
-    const id = router.query.id
 
     useQuery("editsingleSchoolData", async () => {
         dispatch({ type: "editSchoolLoadingUpdate", payload: true });
-        await getTrainingSchool(id)
+        await getTrainingSchool(schoolId)
             .then((res) => {
                 toast.success('School Loaded');
                 dispatch({ type: "editSchoolLoadingUpdate", payload: false });
@@ -49,7 +48,7 @@ export default function CreateSchool() {
             type: "editstateUpdate", payload:
                 { isLoading: true, school: values }
         });
-        await editTrainingSchool(nonNullValues(values), id).then(() => {
+        await editTrainingSchool(nonNullValues(values), schoolId).then(() => {
             toast.success("Successfully updated");
             dispatch({ type: "editSchoolLoadingUpdate", payload: false });
             router.push('/trainingSchools');
@@ -88,3 +87,10 @@ export default function CreateSchool() {
         </Layout>
     )
 }
+export async function getServerSideProps({ params }) {
+    return {
+      props: {
+        schoolId:params.id
+      }
+    }
+  }

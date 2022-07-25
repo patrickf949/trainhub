@@ -1,19 +1,20 @@
 
-import { Formik, Field, Form, useFormik } from 'formik';
+import { Formik, Form } from 'formik';
 import Loader from '../../../components/loader';
 import * as Yup from 'yup';
+import MultiSelector from '../../../components/multiSelect';
+import { getAllTrainingSchools } from '../../trainingSchools/lib/schools';
+import InputField from '../../../components/inputField';
 
 export default function Contact(props) {
     const { contact, handleSubmit, isProcessing } = props;
     const validationSchema = Yup.object().shape({
         phoneNumber: Yup.string()
             .required("Phone Number is required")
-            .min(6, "Phone Number must be 10 characters")
+            .matches(/^[0-9]+$/, 'Must be digits')
+            .min(10, "Phone Number must be 10 characters"),
+        trainingschools: Yup.array()
     });
-    // const formik = useFormik({
-    //     initialValues: contact,
-    //     validationSchema
-    // });
 
     return (
         <div>
@@ -23,21 +24,22 @@ export default function Contact(props) {
                 validationSchema={validationSchema}
             >
                 <Form className="form-control">
-                    <label htmlFor="phoneNumber">
-                        Enter phone Number <span className='text-danger'>*</span>
-                    </label>
-                    <Field
-                        className="form-control"
-                        required={true} id="phoneNumber"
+                    <InputField
                         name="phoneNumber"
-                        disabled={isProcessing}
-                        placeholder="07xxxxxxxx"
-                        pattern="^[0-9]{10}$"
-                    />
-                    <small>
-                        Number should be 10 digits
-                    </small>
+                        placeholder="Enter Phone Number"
+                        label="Phone Number"
+                        isLoading={isProcessing}
+                        required={true}
+                    ></InputField>
                     <hr />
+                    <MultiSelector
+                        name={"trainingschools"}
+                        placeholder={"Select a School"}
+                        label={"Training Schools"}
+                        required={false}
+                        field={"name"}
+                        getRequest={getAllTrainingSchools}
+                    ></MultiSelector>
                     <Loader isProcessing={isProcessing}></Loader>
                     <button hidden={isProcessing} className='btn btn-sm btn-outline-primary' type="submit">Submit</button>
                 </Form>
