@@ -32,8 +32,8 @@ export default function UpdateSchool({schoolId}) {
                 newschool.courses = flattenArray(editschool.courses);
                 newschool.passRate = convertToString(editschool.passRate);
                 newschool.level = convertToString(editschool.level);
-                delete editschool['id'];
-                delete editschool['districtId'];
+                delete newschool['id'];
+                delete newschool['districtId'];
                 dispatch({ type: "editSchoolUpdate", payload: newschool });
                 return res.data;
             })
