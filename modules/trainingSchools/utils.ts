@@ -5,8 +5,8 @@ export function flattenArray(array:Array<genericItem>){
 }
 
 export function convertToString(field:any){
-    return field?field.toString():null;
+    return field?field.toString():'';
 }
 export function nonNullValues(obj){
-    return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null && v!=''));
+    return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v !== null && v!==''));
 }
