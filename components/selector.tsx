@@ -4,7 +4,7 @@ import { useQuery } from 'react-query'
 import Select from "react-select";
 
 export default function Selector(props) {
-    const { getRequest, name, label,placeholder, required } = props;
+    const { getRequest, name, label, placeholder, required } = props;
     const { isLoading, data, } = useQuery(`get${name}`, async () =>
         await getRequest()
             .then((res) => {
@@ -30,21 +30,20 @@ export default function Selector(props) {
                     form,
                     field,
                     meta,
-                }) => (
-                    <>
-                        <Select
-                            value={options ? options.filter(each => field.value.includes(each.value))[0] : null}
-                            options={options}
-                            isLoading={isLoading}
-                            placeholder={placeholder}
-                            onChange={option =>
-                                form.setFieldValue(field.name, option.value)
-                            }
-                        />
-                        {meta.error && (
-                            <div className="text-danger">{meta.error}</div>
-                        )}
-                    </>)}
+                }) => (<>
+                    <Select
+                        value={options ? options.filter(each => each.value === field.value)[0] : ''}
+                        options={options}
+                        isLoading={isLoading}
+                        placeholder={placeholder}
+                        onChange={option =>
+                            form.setFieldValue(field.name, option.value)
+                        }
+                    />
+                    {meta.error && (
+                        <div className="text-danger">{meta.error}</div>
+                    )}
+                </>)}
             </Field>
             <br />
         </>

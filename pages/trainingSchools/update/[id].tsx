@@ -25,16 +25,16 @@ export default function UpdateSchool({schoolId}) {
             .then((res) => {
                 toast.success('School Loaded');
                 dispatch({ type: "editSchoolLoadingUpdate", payload: false });
-                let editschool = res.data.data;
-                editschool = {...editInitialState.school,...nonNullValues(editschool)}
-                editschool.district = editschool.district.id;
-                editschool.contacts = flattenArray(editschool.contacts);
-                editschool.courses = flattenArray(editschool.courses);
-                editschool.passRate = convertToString(editschool.passRate);
-                editschool.level = convertToString(editschool.level);
+                const editschool = res.data.data;
+                let newschool = {...editInitialState.school,...nonNullValues(editschool)}
+                newschool.district =  newschool['districtId']?newschool['districtId']:'';
+                newschool.contacts = flattenArray(editschool.contacts);
+                newschool.courses = flattenArray(editschool.courses);
+                newschool.passRate = convertToString(editschool.passRate);
+                newschool.level = convertToString(editschool.level);
                 delete editschool['id'];
                 delete editschool['districtId'];
-                dispatch({ type: "editSchoolUpdate", payload: editschool });
+                dispatch({ type: "editSchoolUpdate", payload: newschool });
                 return res.data;
             })
             .catch((error) => {
