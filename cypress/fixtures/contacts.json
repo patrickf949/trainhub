@@ -1,0 +1,36 @@
+{
+  "contacts": {
+    "status_code": 200,
+    "data": [
+      {
+        "id": "01071214-122f-46ae-92a4-16673b05453f",
+        "phoneNumber": "0782405989",
+        "createdAt": "2021-12-15T09:17:40.003Z"
+      },
+      {
+        "id": "4b72f7e8-10d7-4c6f-8898-b5c5ee639872",
+        "phoneNumber": "0782540067",
+        "createdAt": "2021-12-15T09:18:15.601Z"
+      },
+      {
+        "id": "99eab328-2cca-475f-9723-e00bace165da",
+        "phoneNumber": "0799013859",
+        "createdAt": "2022-05-07T21:12:56.765Z"
+      }
+    ]
+  },
+  "singleContact": {
+    "status_code": 200,
+    "data": {
+      "id": "01071214-122f-46ae-92a4-16673b05453f",
+      "phoneNumber": "0782405989",
+      "createdAt": "2021-12-15T09:17:40.003Z",
+      "trainingschools": []
+    }
+  },
+  "contact": {
+    "id": "01071214-122f-46ae-92a4-16673b05453f",
+    "phoneNumber": "0782405989",
+    "createdAt": "2021-12-15T09:17:40.003Z"
+  }
+}

@@ -18,7 +18,8 @@
 
 # misc
 .DS_Store
-.env*
+.env
+.env.local
 
 # debug
 npm-debug.log*
@@ -26,3 +27,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .firebase
+coverage
+.nyc_output/
