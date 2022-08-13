@@ -13,8 +13,17 @@ export default defineConfig({
     },
     baseUrl: "http://localhost:3000",
   },
-  video:false,
+
+  video: false,
+
   env: {
     apiUrl: process.env.NEXT_PUBLIC_API_URL,
+  },
+
+  component: {
+    devServer: {
+      framework: "next",
+      bundler: "webpack",
+    },
   },
 });

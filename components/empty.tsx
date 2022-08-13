@@ -11,4 +11,4 @@ export default function Empty(props:{columns:number,label:string}) {
            </tr>
         </tfoot>
     );
-};
+}

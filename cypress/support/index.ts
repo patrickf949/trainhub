@@ -6,6 +6,7 @@
 // in cypress/support/index.ts
 // load type definitions that come with Cypress module
 
+import "@/cypress/code-coverage/support"
 
 declare global {
   namespace Cypress {

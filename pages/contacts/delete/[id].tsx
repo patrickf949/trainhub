@@ -37,7 +37,7 @@ export default function DeleteSingleContact({ contactId }) {
     const handleDelete = async () => {
         dispatch({ type: "ContactLoadingChange", payload: true });
         await deleteContact(contactId)
-            .then((res) => {
+            .then(() => {
                 toast.success('Course Deleted!');
                 dispatch({ type: "ContactLoadingChange", payload: false });
                 router.push('/courses');

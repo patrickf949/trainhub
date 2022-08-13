@@ -1,12 +1,13 @@
 # TRAIN HUB
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/patrickf949/trainhub/tree/develop.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/patrickf949/trainhub/tree/ch-testing)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/patrickf949/trainhub/tree/develop.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/patrickf949/trainhub/tree/develop) [![Coverage Status](https://coveralls.io/repos/github/patrickf949/trainhub/badge.svg?branch=develop)](https://coveralls.io/github/patrickf949/trainhub?branch=develop)
 
 Train hub is a management system that enables users manage training courses in different institutions.
 
 ## Technologies
 
 - Next.js with Typescript
+- Cypress
 
 ## Prerequisites
 

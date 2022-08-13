@@ -13,7 +13,7 @@ import DeleteSchool from '../../../modules/trainingSchools/components/delete'
 import Loader from '../../../components/loader'
 import Link from 'next/link'
 
-export default function DeleteTrainingSchool({schoolId}) {
+export default function DeleteTrainingSchool({schoolId}:{schoolId:string}) {
     const router = useRouter();
     const [state, dispatch] = useReducer(reducer, initialState);
     const { isLoading, school } = state

@@ -29,3 +29,4 @@ yarn-error.log*
 .firebase
 coverage
 .nyc_output/
+# .coveralls.yml

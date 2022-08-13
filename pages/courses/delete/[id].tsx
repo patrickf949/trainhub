@@ -37,7 +37,7 @@ export default function DeleteSingleCourse({ courseId }) {
     const handleDelete = async () => {
         dispatch({ type: "CourseLoading", payload: true });
         await deleteCourse(courseId)
-            .then((res) => {
+            .then(() => {
                 toast.success('Course Deleted!');
                 dispatch({ type: "CourseLoading", payload: false });
                 router.push('/courses');
