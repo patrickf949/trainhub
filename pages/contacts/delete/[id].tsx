@@ -28,7 +28,7 @@ export default function DeleteSingleContact({ contactId }) {
                 dispatch({ type: "ContactView", payload: res.data.data });
             })
             .catch((error) => {
-                toast.error("Failed to load Course");
+                toast.error("Failed to load Contact");
                 toast.error(error.message);
                 toast.error(error.response.data.message);
                 dispatch({ type: "ContactLoadingChange", payload: false });
@@ -38,12 +38,12 @@ export default function DeleteSingleContact({ contactId }) {
         dispatch({ type: "ContactLoadingChange", payload: true });
         await deleteContact(contactId)
             .then(() => {
-                toast.success('Course Deleted!');
+                toast.success('Contact Deleted!');
                 dispatch({ type: "ContactLoadingChange", payload: false });
-                router.push('/courses');
+                router.push('/contacts');
             })
             .catch((error) => {
-                toast.error("Failed to Delete Course!");
+                toast.error("Failed to Delete Contact!");
                 toast.error(error.message);
                 toast.error(error.response.data.message);
                 dispatch({ type: "ContactLoadingChange", payload: false });

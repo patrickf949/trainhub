@@ -21,6 +21,22 @@ describe("contacts view", () => {
     cy.get("button").first().should("have.text", "Add Contact");
   });
 
+  it("can move to add contact page", () => {
+    cy.intercept({//intercepts training schools view api
+      method: "GET",
+      url: "**/api/v1/trainingSchools/",
+    },
+    {
+      statusCode: 200,
+      body: {data:[]},
+      headers: { "access-control-allow-origin": "*" },
+    })
+    cy.contains('Add Contact').click();
+    cy.contains('Phone Number').should('exist')
+    cy.contains('Submit').should('exist')
+    // cy.
+  });
+
   it("displays contacts", () => {
     cy.get("tbody tr td").first().should("have.text", "1");
     cy.get("tbody tr td a").first().should("have.text", contactData.contact.phoneNumber);

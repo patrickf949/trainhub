@@ -22,18 +22,15 @@ describe("contacts view", () => {
         url: `**/api/v1/contacts/${contactData.contact.id}`,
       },
       {
-        statusCode: 200,
+        statusCode: 400,
         body: contactData.singleContact,
         headers: { "access-control-allow-origin": "*" },
       }
     ).as("getContact");
-    cy.visit("/contacts");
+    cy.visit(`/contacts/view/${contactData.contact.id}`);
   });
   
-  it("can view contact with view button", () => {
-
-    cy.get("tbody tr td .btn").first().click();
-    cy.contains(contactData.contact.phoneNumber).should('exist')
-
+  it("handles error from api", () => {
+    cy.contains('Failed to load Contact').should('exist')
   });
 });
