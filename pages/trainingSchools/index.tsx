@@ -1,7 +1,5 @@
 import Layout from '../../components/layout'
-import Link from 'next/link'
 import Head from 'next/head'
-import Date from '../../components/date'
 import { useQuery } from 'react-query'
 import { getAllTrainingSchools } from '../../modules/trainingSchools/lib/schools'
 import Loader from '../../components/loader'

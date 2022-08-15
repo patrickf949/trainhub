@@ -1,0 +1,117 @@
+{
+  "schools": {
+    "status_code": 200,
+    "data": [
+      {
+        "id": "d9ba8683-2c24-4075-952b-50b1feac4ee5",
+        "name": "Rhodes Medic School",
+        "level": null,
+        "registrationStatus": "Full Registration",
+        "principal": "Rhodes Principle",
+        "createdAt": "2022-07-14T10:19:37.321Z",
+        "healthFacility": "Nsambya Hospital",
+        "address": "P.O.BOX 288 Mukono",
+        "passRate": 0,
+        "email": "medic@gmail.com",
+        "districtId": "31d06614-1358-4b29-9629-79403307e143"
+      },
+      {
+        "id": "a428620b-d18b-4109-888f-a9ab442aa9ee",
+        "name": "Uganda Christian Institute for Professional Development",
+        "level": null,
+        "registrationStatus": "Full Registration",
+        "principal": "Andama Grace",
+        "createdAt": "2021-12-15T09:20:02.178Z",
+        "healthFacility": "Lira Regional Referral Hospital",
+        "address": "P.O Box 254, Lira",
+        "passRate": null,
+        "email": "uciadmin@uci.ac.ug",
+        "districtId": null
+      },
+      {
+        "id": "3937f2e0-6422-4690-8076-d86364b7407f",
+        "name": "Victoria University",
+        "level": null,
+        "registrationStatus": "Full Registration",
+        "principal": "Head of Nursing",
+        "createdAt": "2021-12-15T09:20:29.757Z",
+        "healthFacility": "Mulago National Referral Hospital",
+        "address": "P.O.BOX 30866, Kampala",
+        "passRate": 59,
+        "email": "admissions@vu.ac.ug",
+        "districtId": "89b379a5-f86c-4d5d-a861-a246d70d0127"
+      }
+    ]
+  },
+  "school": {
+    "id": "d9ba8683-2c24-4075-952b-50b1feac4ee5",
+    "name": "Rhodes Medic School",
+    "level": null,
+    "registrationStatus": "Full Registration",
+    "principal": "Rhodes Principle",
+    "createdAt": "2022-07-14T10:19:37.321Z",
+    "healthFacility": "Nsambya Hospital",
+    "address": "P.O.BOX 288 Mukono",
+    "passRate": 0,
+    "email": "medic@gmail.com",
+    "districtId": "31d06614-1358-4b29-9629-79403307e143"
+  },
+  "singleSchool": {
+    "status_code": 200,
+    "data": {
+      "id": "d9ba8683-2c24-4075-952b-50b1feac4ee5",
+      "name": "Rhodes Medic School",
+      "level": null,
+      "registrationStatus": "Full Registration",
+      "principal": "Rhodes Principle",
+      "createdAt": "2022-07-14T10:19:37.321Z",
+      "healthFacility": "Nsambya Hospital",
+      "address": "P.O.BOX 288 Mukono",
+      "passRate": 0,
+      "email": "medic@gmail.com",
+      "courses": [
+        {
+          "name": "Bsc. Radiology",
+          "id": "a428620b-d18b-4109-888f-a9ab442bxw9ee",
+          "professionalQualification": "UACE",
+          "durationYears": 2,
+          "createdAt": "2022-07-14T10:19:37.321Z",
+          "cadre": "Radiologist"
+        },
+        {
+          "name": "Bsc. Cardiology",
+          "id": "a428620b-d18b-4109-888f-xw9ee",
+          "professionalQualification": "UACE",
+          "durationYears": 2,
+          "createdAt": "2022-07-14T10:19:37.321Z",
+          "cadre": "Cardiologist"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "01071214-122f-46ae-92a4-16673b05453f",
+          "phoneNumber": "0782405989",
+          "createdAt": "2021-12-15T09:17:40.003Z"
+        }
+      ],
+      "districtId": "31d06614-1358-4b29-9629-79403307e143",
+      "district": {
+        "name": "Kaberamaido",
+        "id": "31d06614-1358-4b29-9629-79403307e143",
+        "createdAt": "2022-07-14T10:19:37.321Z",
+        "countys": [
+          {
+            "id": "31d06614-1358-4b29-9629-79403307e143county",
+            "name": "Kaberamaido",
+            "createdAt": "2022-07-14T10:19:37.321Z"
+          }
+        ],
+        "region": {
+          "id": "31d06614-1358-4b29-9629-79403307region",
+          "name": "North Eastern",
+          "createdAt": "2022-07-14T10:19:37.321Z"
+        }
+      }
+    }
+  }
+}

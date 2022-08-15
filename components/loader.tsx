@@ -14,4 +14,4 @@ export default function Loader(props) {
         <ClipLoader color={color} loading={isProcessing} cssOverride={override} size={50} />
 
     );
-};
+}

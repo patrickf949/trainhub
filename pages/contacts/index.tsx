@@ -1,7 +1,5 @@
 import Layout from '../../components/layout'
-import Link from 'next/link'
 import Head from 'next/head'
-import Date from '../../components/date'
 import { useQuery } from 'react-query'
 import { getAllContacts } from '../../modules/contacts/lib/contacts'
 import Loader from '../../components/loader'

@@ -1,5 +1,5 @@
 import '../styles/global.css'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AppProps } from 'next/app'
 import Head from 'next/head'
