@@ -21,7 +21,7 @@ export default function School(props: schoolDataEditProps) {
         principal: Yup.string()
             .required("Principal is required")
             .min(4, "Principal name must be at least 4 characters")
-            .max(60, "Principal namme must not exceed 60 characters"),
+            .max(60, "Principal name must not exceed 60 characters"),
         registrationStatus: Yup.string().oneOf([null, ...statuses], 'Will default to full registration').nullable(),
         email: Yup.string().email("Email is invalid")
             .nullable(),

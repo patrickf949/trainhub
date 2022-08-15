@@ -12,7 +12,7 @@ import { useRouter } from 'next/router'
 import { nonNullValues } from '../../modules/trainingSchools/utils';
 
 
-export default function CreateSchool() {
+export default function CreateCourse() {
     const router = useRouter();
     const [state, dispatch] = useReducer(editReducer,editInitialState);
     const handleSubmit = async (values:editCourseData) => {
@@ -23,7 +23,7 @@ export default function CreateSchool() {
             router.push('/courses');
         }).catch(error => {
             dispatch({ type: "editCourseLoading", payload: false });
-            toast.error("Failed to create Contact");
+            toast.error("Failed to create Course");
             toast.error(error.message);
             toast.error(error.response.data.message);
         });
