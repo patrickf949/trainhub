@@ -69,7 +69,49 @@
       "address": "P.O.BOX 288 Mukono",
       "passRate": 0,
       "email": "medic@gmail.com",
-      "districtId": "31d06614-1358-4b29-9629-79403307e143"
+      "courses": [
+        {
+          "name": "Bsc. Radiology",
+          "id": "a428620b-d18b-4109-888f-a9ab442bxw9ee",
+          "professionalQualification": "UACE",
+          "durationYears": 2,
+          "createdAt": "2022-07-14T10:19:37.321Z",
+          "cadre": "Radiologist"
+        },
+        {
+          "name": "Bsc. Cardiology",
+          "id": "a428620b-d18b-4109-888f-xw9ee",
+          "professionalQualification": "UACE",
+          "durationYears": 2,
+          "createdAt": "2022-07-14T10:19:37.321Z",
+          "cadre": "Cardiologist"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "01071214-122f-46ae-92a4-16673b05453f",
+          "phoneNumber": "0782405989",
+          "createdAt": "2021-12-15T09:17:40.003Z"
+        }
+      ],
+      "districtId": "31d06614-1358-4b29-9629-79403307e143",
+      "district": {
+        "name": "Kaberamaido",
+        "id": "31d06614-1358-4b29-9629-79403307e143",
+        "createdAt": "2022-07-14T10:19:37.321Z",
+        "countys": [
+          {
+            "id": "31d06614-1358-4b29-9629-79403307e143county",
+            "name": "Kaberamaido",
+            "createdAt": "2022-07-14T10:19:37.321Z"
+          }
+        ],
+        "region": {
+          "id": "31d06614-1358-4b29-9629-79403307region",
+          "name": "North Eastern",
+          "createdAt": "2022-07-14T10:19:37.321Z"
+        }
+      }
     }
   }
 }

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "AppleBeatz",
+    "id": "31d06614-1358-4b29-9629-9x11ec",
+    "createdAt": "2022-07-14T10:19:37.321Z",
+    "region": {
+      "id": "31d06614-1358-4b29-9629-79403307region",
+      "name": "North Eastern",
+      "createdAt": "2022-07-14T10:19:37.321Z"
+    }
+  },
+  {
+    "name": "Kaberamaido",
+    "id": "31d06614-1358-4b29-9629-79403307e143",
+    "createdAt": "2022-07-14T10:19:37.321Z",
+    "region": {
+      "id": "31d06614-1358-4b29-9629-79403307region",
+      "name": "North Eastern",
+      "createdAt": "2022-07-14T10:19:37.321Z"
+    }
+  },
+  {
+    "name": "Kampala",
+    "id": "31d06614-1358-4b29-9629-bx8143",
+    "createdAt": "2022-07-14T10:19:37.321Z",
+    "region": {
+      "id": "31d06614-1358-4b29-9629-79403307region",
+      "name": "North Eastern",
+      "createdAt": "2022-07-14T10:19:37.321Z"
+    }
+  },
+  {
+    "name": "Masaka",
+    "id": "31d06614-1358-4b29-9629-b7z8z9",
+    "createdAt": "2022-07-14T10:19:37.321Z",
+    "region": {
+      "id": "31d06614-1358-4b29-9629-79403307region",
+      "name": "North Eastern",
+      "createdAt": "2022-07-14T10:19:37.321Z"
+    }
+  }
+]
