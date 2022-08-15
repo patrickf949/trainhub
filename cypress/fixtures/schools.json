@@ -3,6 +3,19 @@
     "status_code": 200,
     "data": [
       {
+        "id": "d9ba8683-2c24-4075-952b-50b1feac4ee5",
+        "name": "Rhodes Medic School",
+        "level": null,
+        "registrationStatus": "Full Registration",
+        "principal": "Rhodes Principle",
+        "createdAt": "2022-07-14T10:19:37.321Z",
+        "healthFacility": "Nsambya Hospital",
+        "address": "P.O.BOX 288 Mukono",
+        "passRate": 0,
+        "email": "medic@gmail.com",
+        "districtId": "31d06614-1358-4b29-9629-79403307e143"
+      },
+      {
         "id": "a428620b-d18b-4109-888f-a9ab442aa9ee",
         "name": "Uganda Christian Institute for Professional Development",
         "level": null,
@@ -27,19 +40,6 @@
         "passRate": 59,
         "email": "admissions@vu.ac.ug",
         "districtId": "89b379a5-f86c-4d5d-a861-a246d70d0127"
-      },
-      {
-        "id": "d9ba8683-2c24-4075-952b-50b1feac4ee5",
-        "name": "Rhodes Medic School",
-        "level": null,
-        "registrationStatus": "Full Registration",
-        "principal": "Rhodes Principle",
-        "createdAt": "2022-07-14T10:19:37.321Z",
-        "healthFacility": "Nsambya Hospital",
-        "address": "P.O.BOX 288 Mukono",
-        "passRate": 0,
-        "email": "medic@gmail.com",
-        "districtId": "31d06614-1358-4b29-9629-79403307e143"
       }
     ]
   },
@@ -56,7 +56,7 @@
     "email": "medic@gmail.com",
     "districtId": "31d06614-1358-4b29-9629-79403307e143"
   },
-  "schoolReq": {
+  "singleSchool": {
     "status_code": 200,
     "data": {
       "id": "d9ba8683-2c24-4075-952b-50b1feac4ee5",
