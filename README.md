@@ -19,13 +19,29 @@ Train hub is a management system that enables users manage training courses in d
 Kindly follow these steps and enter the commands in the terminal
 
 1. clone the repo
+
 `git clone https://github.com/patrickf949/trainhub.git`
 
 2. check into the directory
+
 `cd trainhub`
 
 3. install dependencies
-` npm install `
+
+`npm install `
 
 4. run the development environment
+
 `npm run dev`
+
+### Building
+
+To run a built version of the app(advisable for testing)
+
+`npm run build && npm start`
+
+### Testing
+
+To run tests(ensure the built version of the app is running)
+
+`npm run test`
